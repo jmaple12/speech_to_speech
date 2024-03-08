@@ -4,7 +4,7 @@ Combine several AI model to achieve speech to speech, which wil also reduce some
 Now I begin to show the file folder meaning and some model needed to download. 
 
 ## voice_record
-I define a function named **listen** to achieve automatically record man's voice and stop when speak is over. This function is here[LargeModel/voice_record/voice_record_def.py]
+I define a function named **listen** to achieve automatically record man's voice and stop when speak is over. This function is here[voice_record_def.py](https://github.com/jmaple12/speech_to_speech/blob/main/LargeModel/voice_record/voice_record_def.py)
 ```        
 def listen(WAVE_OUTPUT_FILENAME, tag, delayTime=2, tendure=2, mindb = 500):
 return(sign, tag)
