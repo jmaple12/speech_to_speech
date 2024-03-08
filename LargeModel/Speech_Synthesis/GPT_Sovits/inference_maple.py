@@ -10,7 +10,9 @@ import sys,os
 # 4.639行detach的[0,0]位置改动
 # 5.i18n.py的内容我直接放在本文件里面了
 # 6.增加了禁用进度条的程序tqdm_replacement函数
+
 all_path = "E:\LargeModel\Speech_Synthesis\GPT_Sovits\GPT-SoVITS-beta\GPT-SoVITS-beta0306"
+#this inference_maple.py file in my computer is locate at "E:\LargeModel\Speech_Synthesis\GPT_Sovits\GPT-SoVITS-beta\GPT-SoVITS-beta0306\GPT_SoVITS\inference_maple.py"
 
 # 将标准输出流重定向到空设备（/dev/null）---在调用层执行
 # original_stdout =  sys.stdout
