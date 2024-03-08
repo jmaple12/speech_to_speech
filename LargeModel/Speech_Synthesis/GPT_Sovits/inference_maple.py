@@ -121,7 +121,7 @@ if hasattr(torch.cuda, 'empty_cache'):
 #对i18n.py进行修改
 
 def load_language_list(language):
-    with open(f"E:\LargeModel\Speech_Synthesis\GPT_Sovits\GPT-SoVITS-beta\GPT-SoVITS-beta0306/tools/i18n/locale/{language}.json", "r", encoding="utf-8") as f:
+    with open(f"{all_path}/tools/i18n/locale/{language}.json", "r", encoding="utf-8") as f:
         language_list = json.load(f)
     return language_list
 
@@ -131,7 +131,7 @@ class I18nAuto:
             language = locale.getdefaultlocale()[
                 0
             ]  # getlocale can't identify the system's language ((None, None))
-        if not os.path.exists(f"E:\LargeModel\Speech_Synthesis\GPT_Sovits\GPT-SoVITS-beta\GPT-SoVITS-beta0306/tools/i18n/locale/{language}.json"):
+        if not os.path.exists(f"{all_path}/tools/i18n/locale/{language}.json"):
             language = "en_US"
         self.language = language
         self.language_map = load_language_list(language)
