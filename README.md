@@ -16,5 +16,22 @@ return(sign, tag)
 
 ## Sound to Text
 
-　　In this section I use the Speech Recognition Model Fast_Whisper,we need to download the model according to [https://github.com/SYSTRAN/faster-whisper], or from [https://hf-mirror.com/Systran/faster-whisper-large-v3]and put it in **'LargeModel/Speech_to_Text/Fast_whisper
+　　In this section I use the Speech Recognition Model Fast_Whisper,we need to download the model according to [https://github.com/SYSTRAN/faster-whisper], or from [https://hf-mirror.com/Systran/faster-whisper-large-v3]　and put it in **'LargeModel/Speech_to_Text/Fast_whisper
 /large-v3'** folder, and we can download other size model, it decided by our computer performance. 
+
+## Large language Model
+And then we need to download large LLM, I use Google Gemma[https://github.com/google/gemma_pytorch], and I use it through ollama[https://github.com/ollama/ollama], in ollama weibsite[https://ollama.com/], download its application, and execute below code in cmd
+```
+ollama run gemma:7b
+or
+ollama run gemma:2b
+```
+and then we can download and use the gemma model. 
+
+## Text_to_Voice/Speech_Synthesis
+### Text_to_Voice
+**pyttsx3** can direcitly use the system voice package, and it consumes minimal resources but its voice is bad. 
+
+### Speech_Synthesis
+　　On the other hand, we can also use Speech_Synthesis Model, i use GPT_Sovits Model[https://github.com/RVC-Boss/GPT-SoVITS], it gives a package to process from audio cleaning to model train and model inference. It contains a pretains model about Paimon's voice, therefore, i use the pretained model and i only focus on the inference section. In order to use its inference model, we need to place the **LargeModel/Speech_Synthesis
+/GPT_Sovits/inference_maple.py** into the folder which contains **'inference_webui.py'** in its Integration package, and 
