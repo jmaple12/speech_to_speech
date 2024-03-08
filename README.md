@@ -1,12 +1,12 @@
 # Speech_to_speech
 
-Combine several AI model to achieve speech to speech, which wil also reduce some performance. I only share my way in windows environment, pytorch and cuda is needed.     
+　　Combine several AI model to achieve speech to speech, which wil also reduce some performance. I only share my way in windows environment, pytorch and cuda is needed.     
 
-Now I begin to show the file folder meaning and some model needed to download. 
+　　Now I begin to show the file folder meaning and some model needed to download. 
 
 ## voice_record
 
-I define a function named **listen** to achieve automatically record man's voice and stop when speak is over. This function is here[voice_record_def.py](https://github.com/jmaple12/speech_to_speech/blob/main/LargeModel/voice_record/voice_record_def.py)
+　　I define a function named **listen** to achieve automatically record man's voice and stop when speak is over. This function is here[voice_record_def.py](https://github.com/jmaple12/speech_to_speech/blob/main/LargeModel/voice_record/voice_record_def.py)
 ```        
 def listen(WAVE_OUTPUT_FILENAME, tag, delayTime=2, tendure=2, mindb = 500):
 return(sign, tag)
@@ -19,11 +19,11 @@ return(sign, tag)
 
 　　In this section I use the Speech Recognition Model Fast_Whisper, we need to download the model according to [fast-whisper](https://github.com/SYSTRAN/faster-whisper), or from [huggingface-large-v3](https://huggingface.co/Systran/faster-whisper-large-v3) or its mirror site [mirror-large-v3](https://hf-mirror.com/Systran/faster-whisper-large-v3)　and put it in [large-v3](https://github.com/jmaple12/speech_to_speech/blob/main/LargeModel/Speech_to_Text/Fast_whisper/large-v3) folder, and we can also download other size model, it decided by our computer performance. 
 
-  Besides, [fast_whisper.ipynb](https://github.com/jmaple12/speech_to_speech/blob/main/LargeModel/Speech_to_Text/Fast_whisper/fast_whisper.ipynb) can automatically create caption file(.srt) of an audio, it may reduce work for somebody.    
+　　Besides, [fast_whisper.ipynb](https://github.com/jmaple12/speech_to_speech/blob/main/LargeModel/Speech_to_Text/Fast_whisper/fast_whisper.ipynb) can automatically create caption file(.srt) of an audio, it may reduce work for somebody.    
 
 ## Large language Model
 
-And then we need to download large LLM, I use [Google Gemma](https://github.com/google/gemma_pytorch), and I use it through [ollama](https://github.com/ollama/ollama), in [ollama weibsite](https://ollama.com/), download its application, and execute below code in cmd
+　　And then we need to download large LLM, I use [Google Gemma](https://github.com/google/gemma_pytorch), and I use it through [ollama](https://github.com/ollama/ollama), in [ollama weibsite](https://ollama.com/), download its application, and execute below code in cmd
 ```
 ollama run gemma:7b
 or
@@ -35,21 +35,21 @@ and then we can use the gemma model.
 
 ### Text_to_Voice
 
-**pyttsx3** can directly use the windows system voice package, and it consumes minimal resources but its voice is bad. 
+　　**pyttsx3** can directly use the windows system voice package, and it consumes minimal resources but its voice is bad. 
 
 ### Speech_Synthesis
 
 　　On the other hand, we can also use Speech_Synthesis Model to create our own sound, I use GPT_Sovits Model[GPT_Sovits Model](https://github.com/RVC-Boss/GPT-SoVITS),its new version for windows is here[windows Integration package0306](https://www.123pan.com/s/5tIqVv-GVRcv.html), it gives a package to process from audio cleaning to audio_model_train and model_inference. It contains a pretained model about Paimon's voice, I think it is enough, therefore, I use its pretained model and then I only focus on its inference section.   
   
-  In order to use its inference model, we need to place the Integration package under the [GPT_Sovits](https://github.com/jmaple12/speech_to_speech/tree/main/LargeModel/Speech_Synthesis/GPT_Sovits) and place the [inference_maple.py](https://github.com/jmaple12/speech_to_speech/blob/main/LargeModel/Speech_Synthesis/GPT_Sovits/inference_maple.py) into the Integration package folder which contains **inference_webui.py** , and edit the variables **all_path** according to yourself filepath in the line 14 of the [inference_maple.py](https://github.com/jmaple12/speech_to_speech/blob/main/LargeModel/Speech_Synthesis/GPT_Sovits/inference_maple.py).    
-　　
-  Besides, [gpt_sovits_api.ipynb](https://github.com/jmaple12/speech_to_speech/blob/main/LargeModel/Speech_Synthesis/GPT_Sovits/gpt_sovits_api.ipynb) gives two ways to inference, and second way can directly use its inference section without downloading python module to yourself environment, it only need to run the api.py in cmd before excute the code, and api may cause more time delay.    
+  In order to use its inference model, we need to place the Integration package under the [GPT_Sovits](https://github.com/jmaple12/speech_to_speech/tree/main/LargeModel/Speech_Synthesis/GPT_Sovits) and place the [inference_maple.py](https://github.com/jmaple12/speech_to_speech/blob/main/LargeModel/Speech_Synthesis/GPT_Sovits/inference_maple.py) into the Integration package folder which contains **inference_webui.py** , and edit the variables **all_path** according to yourself filepath in the line 14 of the [inference_maple.py](https://github.com/jmaple12/speech_to_speech/blob/main/LargeModel/Speech_Synthesis/GPT_Sovits/inference_maple.py).      
+
+　　Besides, [gpt_sovits_api.ipynb](https://github.com/jmaple12/speech_to_speech/blob/main/LargeModel/Speech_Synthesis/GPT_Sovits/gpt_sovits_api.ipynb) gives two ways to inference, and second way can directly use its inference section without downloading python module to yourself environment, it only need to run the api.py in cmd before excute the code, and api may cause more time delay.    
 
 　　Notice：GPT_Sovits has its own environment, if we use the first way in  [gpt_sovits_api.ipynb](https://github.com/jmaple12/speech_to_speech/blob/main/LargeModel/Speech_Synthesis/GPT_Sovits/gpt_sovits_api.ipynb)  or [combine.ipynb](https://github.com/jmaple12/speech_to_speech/blob/main/LargeModel/Combine/combine.ipynb) we need to install some package into ourself environment like package: cn2an, pypinyin, jieba_fast, pyopenjtalk, g2p_en, ffmpeg-python and so on.
 
 ## Final 
 
-open [combine.ipynb](https://github.com/jmaple12/speech_to_speech/blob/main/LargeModel/Combine/combine.ipynb), download some python package, modify variables in the third bloack 
+　　open [combine.ipynb](https://github.com/jmaple12/speech_to_speech/blob/main/LargeModel/Combine/combine.ipynb), download some python package, modify variables in the third bloack 
 ```
 model_size, download_root, model_path, text_text_model
 ```
