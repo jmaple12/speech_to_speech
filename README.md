@@ -16,4 +16,5 @@ return(sign, tag)
 
 ## Sound to Text
 
-In this section I use the Speech Recognition Model Fast_Whisper[https://github.com/SYSTRAN/faster-whisper], we need to download the model from [https://hf-mirror.com/Systran/faster-whisper-large-v3], 
+　　In this section I use the Speech Recognition Model Fast_Whisper,we need to download the model according to [https://github.com/SYSTRAN/faster-whisper], or from [https://hf-mirror.com/Systran/faster-whisper-large-v3]and put it in **'LargeModel/Speech_to_Text/Fast_whisper
+/large-v3'** folder, and we can download other size model, it decided by our computer performance. 
