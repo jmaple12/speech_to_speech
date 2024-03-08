@@ -61,7 +61,7 @@ according to your condition.
 
 ## Summarize
 
-　　I mainly make a framework which suture several AI model to achieve speech to speech, and I focus on the localization model. Because this issue need to run at least 2 AI model at the same time, it requires large GPU video memory, and it will be worse than the speech conversation AI model. My GPU only has 4G video memory, so I only run the framework in a low level, fast_whisper can't translate my voice well and the gpt_sovits slowly deal with a sentense per 4 seconds. if you have higher computer congifure, you can try to use larger fast_whisper and Gemma  model or other outstanding AI model. So far, the gemma and fast_whisper is the best miniaturization open_source model in its field.  
+　　I mainly make a framework which suture several AI model to achieve speech to speech, and I focus on the localization model. Because this issue need to run at least 2 AI model at the same time, it requires large GPU video memory, and it will be worse than the speech conversation AI model. My GPU only has 4G video memory, so I only run the framework in a low level, fast_whisper can't translate my voice well and the gpt_sovits slowly deal with a sentense per 4 seconds. if you have higher computer congifure, you can try to use larger fast_whisper and Gemma  model or other outstanding AI model.  
   
 　　of course, we can also place api of internet AI model in this framework, it may achieve much better performance may cause more time delay. I find Ernie Bot app has speech conversation function, and it is good.    
   
