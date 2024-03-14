@@ -1,3 +1,5 @@
+[中文介绍请点击这里](https://github.com/jmaple12/speech_to_speech/blob/main/%E4%BB%8B%E7%BB%8D.md)
+
 # voice conversation 
 
 　　Combine several AI model to achieve speech to speech, which wil also reduce some performance. I only share my way in windows environment, pytorch and cuda is needed.     
