@@ -15,7 +15,7 @@ return(sign, tag)
   
 　　In [combine.ipynb](https://github.com/jmaple12/speech_to_speech/blob/main/LargeModel/Combine/combine.ipynb), your sound record will be cut several section, when your sound pause exceed **delayTime** seconds, the sound will be temporarily saved in [test](https://github.com/jmaple12/speech_to_speech/tree/main/LargeModel/Combine/test) file, and if your sound pause exceed **tendure** seconds, the sound record will be end until the next round conversation is start.  
 
-## Sound to Text
+## Sound to Text/ASR
 
 　　In this section I use the Speech Recognition Model Fast_Whisper, we need to download the model according to [fast-whisper](https://github.com/SYSTRAN/faster-whisper), or from [huggingface-large-v3](https://huggingface.co/Systran/faster-whisper-large-v3) or its mirror site [mirror-large-v3](https://hf-mirror.com/Systran/faster-whisper-large-v3)　and put it in [large-v3](https://github.com/jmaple12/speech_to_speech/blob/main/LargeModel/Speech_to_Text/Fast_whisper/large-v3) folder, and we can also download other size model, it decided by our computer performance. 
 
