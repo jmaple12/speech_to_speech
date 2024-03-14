@@ -1,4 +1,4 @@
-# Speech_to_speech
+# Speech to speech conversation 
 
 　　Combine several AI model to achieve speech to speech, which wil also reduce some performance. I only share my way in windows environment, pytorch and cuda is needed.     
 
