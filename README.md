@@ -17,17 +17,16 @@ return(sign, tag)
 
 ## Sound to Text/ASR
 ### faster_whisper  
-　　In this section I use the Speech Recognition Model Fast_Whisper, we need to download the model according to [fast-whisper](https://github.com/SYSTRAN/faster-whisper), or from [huggingface-large-v3](https://huggingface.co/Systran/faster-whisper-large-v3) or its mirror site [mirror-large-v3](https://hf-mirror.com/Systran/faster-whisper-large-v3)　and put it in [large-v3](https://github.com/jmaple12/speech_to_speech/blob/main/LargeModel/Speech_to_Text/Fast_whisper/large-v3) folder, and we can also download other size model, it decided by our computer performance.   
+　　In this section I use the Speech Recognition Model Fast_Whisper, we need to download the model according to [fast-whisper](https://github.com/SYSTRAN/faster-whisper), or from [huggingface-large-v3](https://huggingface.co/Systran/faster-whisper-large-v3) or its mirror site [mirror-large-v3](https://hf-mirror.com/Systran/faster-whisper-large-v3)　and put it in [large-v3](https://github.com/jmaple12/speech_to_speech/blob/main/LargeModel/Speech_to_Text/Fast_whisper/large-v3) folder, and we can also download other size model, it decided by our computer performance.  
+  
+　　Besides, [fast_whisper.ipynb](https://github.com/jmaple12/speech_to_speech/blob/main/LargeModel/Speech_to_Text/Fast_whisper/fast_whisper.ipynb) can automatically create caption file(.srt) of an audio, it may reduce work for somebody.
 
 ### sherpa
 　　Because of poor video memory, I also try to use other tools. sherpa is a model based on kaldi, I　use its onnx version. Because I fail to install its GPU version, therefore, I use its CPU version. Its performance is better than my expectation. Firstly, it can translate the voice as soon as I say it, though it doesn't translate correctly as better as fast_whisper, I think its performance is OK for medium requirement. And some of their models supports both Chinese and English.   
 
-  install sherpa_onnx windows can be found on[sherpa_onnx](https://k2-fsa.github.io/sherpa/onnx/install/windows.html#bit-windows-x64), and its python package install can be found on [sherpa-onnx python](https://k2-fsa.github.io/sherpa/onnx/python/install.html#method-1-from-pre-compiled-wheels). Its real-time-speech-recongition issue can be found on[real-time-speech-recongition](https://k2-fsa.github.io/sherpa/onnx/python/real-time-speech-recongition-from-a-microphone.html), and its pretrained model can be download on[pretrained model](https://github.com/k2-fsa/sherpa-onnx/releases/tag/asr-models). 
+　　install sherpa_onnx windows can be found on[sherpa_onnx](https://k2-fsa.github.io/sherpa/onnx/install/windows.html#bit-windows-x64), and its python package install can be found on [sherpa-onnx python](https://k2-fsa.github.io/sherpa/onnx/python/install.html#method-1-from-pre-compiled-wheels). Its real-time-speech-recongition issue can be found on[real-time-speech-recongition](https://k2-fsa.github.io/sherpa/onnx/python/real-time-speech-recongition-from-a-microphone.html), and its pretrained model can be download on[pretrained model](https://github.com/k2-fsa/sherpa-onnx/releases/tag/asr-models). 
 
-  In [LargeModel/kalid/sherpa_onnx/microphone_endpoint.py](https://github.com/jmaple12/speech_to_speech/blob/main/LargeModel/kalid/sherpa_onnx/microphone_endpoint.py), I modify the [python-api-examples/speech-recognition-from-microphone-with-endpoint-detection.py](https://github.com/k2-fsa/sherpa-onnx/blob/master/python-api-examples/speech-recognition-from-microphone-with-endpoint-detection.py) so that I can directly use its "main" function in python.   
-
-### whisper
-　　Besides, [fast_whisper.ipynb](https://github.com/jmaple12/speech_to_speech/blob/main/LargeModel/Speech_to_Text/Fast_whisper/fast_whisper.ipynb) can automatically create caption file(.srt) of an audio, it may reduce work for somebody.    
+　　In [LargeModel/kalid/sherpa_onnx/microphone_endpoint.py](https://github.com/jmaple12/speech_to_speech/blob/main/LargeModel/kalid/sherpa_onnx/microphone_endpoint.py), I modify the [python-api-examples/speech-recognition-from-microphone-with-endpoint-detection.py](https://github.com/k2-fsa/sherpa-onnx/blob/master/python-api-examples/speech-recognition-from-microphone-with-endpoint-detection.py) so that I can directly use its "main" function in python.       
 
 ## Large language Model
 
@@ -49,10 +48,9 @@ and then we can use the gemma model.
 
 　　On the other hand, we can also use Speech_Synthesis Model to create our own sound, I use GPT_Sovits Model[GPT_Sovits Model](https://github.com/RVC-Boss/GPT-SoVITS),its new version for windows is here[windows Integration package0306](https://www.123pan.com/s/5tIqVv-GVRcv.html), it gives a package to process from audio cleaning to audio_model_train and model_inference. It contains a pretained model about Paimon's voice, I think it is enough, therefore, I use its pretained model and then I only focus on its inference section.   
   
-  In order to use its inference model, we need to place the Integration package under the [GPT_Sovits](https://github.com/jmaple12/speech_to_speech/tree/main/LargeModel/Speech_Synthesis/GPT_Sovits) and place the [inference_maple.py](https://github.com/jmaple12/speech_to_speech/blob/main/LargeModel/Speech_Synthesis/GPT_Sovits/inference_maple.py) into the Integration package folder which contains **inference_webui.py** , and edit the variables **all_path** according to yourself filepath in the line 14 of the [inference_maple.py](https://github.com/jmaple12/speech_to_speech/blob/main/LargeModel/Speech_Synthesis/GPT_Sovits/inference_maple.py).      
+　　In order to use its inference model, we need to place the Integration package under the [GPT_Sovits](https://github.com/jmaple12/speech_to_speech/tree/main/LargeModel/Speech_Synthesis/GPT_Sovits) and place the [inference_maple.py](https://github.com/jmaple12/speech_to_speech/blob/main/LargeModel/Speech_Synthesis/GPT_Sovits/inference_maple.py) into the Integration package folder which contains **inference_webui.py** , and edit the variables **all_path** according to yourself filepath in the line 14 of the [inference_maple.py](https://github.com/jmaple12/speech_to_speech/blob/main/LargeModel/Speech_Synthesis/GPT_Sovits/inference_maple.py).      
 
 　　Besides, [gpt_sovits_api.ipynb](https://github.com/jmaple12/speech_to_speech/blob/main/LargeModel/Speech_Synthesis/GPT_Sovits/gpt_sovits_api.ipynb) gives two ways to inference, and second way can directly use its inference section without downloading python module to yourself environment, it only need to run the api.py in cmd before excute the code, and api may cause more time delay.    
-
 　　Notice：GPT_Sovits has its own environment, if we use the first way in  [gpt_sovits_api.ipynb](https://github.com/jmaple12/speech_to_speech/blob/main/LargeModel/Speech_Synthesis/GPT_Sovits/gpt_sovits_api.ipynb)  or [combine.ipynb](https://github.com/jmaple12/speech_to_speech/blob/main/LargeModel/Combine/combine.ipynb) we need to install some package into ourself environment like package: cn2an, pypinyin, jieba_fast, pyopenjtalk, g2p_en, ffmpeg-python and so on.
 
 ## Final 
@@ -73,7 +71,7 @@ according to your condition.
   
 　　of course, we can also place api of internet AI model in this framework, it may achieve much better performance may cause more time delay. I find Ernie Bot app has speech conversation function, and it is good.    
   
-  　I hope an AI loudspeaker box which can communicate with human fluently and intelligently as it is a man appear in 5 years, I really need them.
+　　I hope an AI loudspeaker box which can communicate with human fluently and intelligently as it is a man appear in 5 years, I really need them.
 
 
     
