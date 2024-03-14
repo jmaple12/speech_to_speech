@@ -16,9 +16,17 @@ return(sign, tag)
 　　In [combine.ipynb](https://github.com/jmaple12/speech_to_speech/blob/main/LargeModel/Combine/combine.ipynb), your sound record will be cut several section, when your sound pause exceed **delayTime** seconds, the sound will be temporarily saved in [test](https://github.com/jmaple12/speech_to_speech/tree/main/LargeModel/Combine/test) file, and if your sound pause exceed **tendure** seconds, the sound record will be end until the next round conversation is start.  
 
 ## Sound to Text/ASR
+### faster_whisper  
+　　In this section I use the Speech Recognition Model Fast_Whisper, we need to download the model according to [fast-whisper](https://github.com/SYSTRAN/faster-whisper), or from [huggingface-large-v3](https://huggingface.co/Systran/faster-whisper-large-v3) or its mirror site [mirror-large-v3](https://hf-mirror.com/Systran/faster-whisper-large-v3)　and put it in [large-v3](https://github.com/jmaple12/speech_to_speech/blob/main/LargeModel/Speech_to_Text/Fast_whisper/large-v3) folder, and we can also download other size model, it decided by our computer performance.   
 
-　　In this section I use the Speech Recognition Model Fast_Whisper, we need to download the model according to [fast-whisper](https://github.com/SYSTRAN/faster-whisper), or from [huggingface-large-v3](https://huggingface.co/Systran/faster-whisper-large-v3) or its mirror site [mirror-large-v3](https://hf-mirror.com/Systran/faster-whisper-large-v3)　and put it in [large-v3](https://github.com/jmaple12/speech_to_speech/blob/main/LargeModel/Speech_to_Text/Fast_whisper/large-v3) folder, and we can also download other size model, it decided by our computer performance. 
+### sherpa
+　　Because of poor video memory, I also try to use other tools. sherpa is a model based on kaldi, I　use its onnx version. Because I fail to install its GPU version, therefore, I use its CPU version. Its performance is better than my expectation. Firstly, it can translate the voice as soon as I say it, though it doesn't translate correctly as better as fast_whisper, I think its performance is OK for medium requirement. And some of their models supports both Chinese and English.   
 
+  install sherpa_onnx windows can be found on[sherpa_onnx](https://k2-fsa.github.io/sherpa/onnx/install/windows.html#bit-windows-x64), and its python package install can be found on [sherpa-onnx python](https://k2-fsa.github.io/sherpa/onnx/python/install.html#method-1-from-pre-compiled-wheels). Its real-time-speech-recongition issue can be found on[real-time-speech-recongition](https://k2-fsa.github.io/sherpa/onnx/python/real-time-speech-recongition-from-a-microphone.html), and its pretrained model can be download on[pretrained model](https://github.com/k2-fsa/sherpa-onnx/releases/tag/asr-models). 
+
+  In [LargeModel/kalid/sherpa_onnx/microphone_endpoint.py](https://github.com/jmaple12/speech_to_speech/blob/main/LargeModel/kalid/sherpa_onnx/microphone_endpoint.py), I modify the [python-api-examples/speech-recognition-from-microphone-with-endpoint-detection.py](https://github.com/k2-fsa/sherpa-onnx/blob/master/python-api-examples/speech-recognition-from-microphone-with-endpoint-detection.py) so that I can directly use its "main" function in python.   
+
+### whisper
 　　Besides, [fast_whisper.ipynb](https://github.com/jmaple12/speech_to_speech/blob/main/LargeModel/Speech_to_Text/Fast_whisper/fast_whisper.ipynb) can automatically create caption file(.srt) of an audio, it may reduce work for somebody.    
 
 ## Large language Model
