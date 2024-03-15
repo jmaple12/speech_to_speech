@@ -12,12 +12,10 @@ import sys
 # 6.增加了禁用进度条的程序tqdm_replacement函数
 #7. 增加了get_streaming_tts_wav流式传输函数
 #8. 重写cut1函数，cut5中的punds添加英文:，更改了punds中重复的;
-#9. 删除i18n相关代码_i18n是用来读取系统语言，然后将用户输入的母语指令转为程序内可识别的指令。都是中国人，我不需要这一段
-#10. 新增cut6"按中英文句末标识符切"(中英文的句号问号叹号，超过一个.会变成空格)，修改get_tts_wav切句后的'/n'合并的语句。
-
-#只需要将本变量改为整合包根目录的文件路径
-all_path = "E:\LargeModel\Speech_Synthesis\GPT_Sovits\GPT-SoVITS-beta\GPT-SoVITS-beta0306fix"
-#this inference_maple.py file in my computer is locate at "E:\LargeModel\Speech_Synthesis\GPT_Sovits\GPT-SoVITS-beta\GPT-SoVITS-beta0306fix\GPT_SoVITS\inference_maple.py"
+#9. 新增cut6"按中英文句末标识符切"(中英文的句号问号叹号，超过一个.会变成空格)，修改get_tts_wav切句后的'/n'合并的语句。
+#10.更改all_path为系统路径，不需要再手动更改all_path地址了
+#11.删除原来"import torch"后面的无用变量名is_share，infer_ttswebui及原版bert_path，cnhubert_base_path的定义方式
+all_path = sys.path[0]
 
 # 将标准输出流重定向到空设备（/dev/null）---在调用层执行
 # original_stdout =  sys.stdout
@@ -40,6 +38,9 @@ import soundfile as sf
 
 #get_tts_wav 中的prompt_language和text_language注释掉
 
+#来自i18n.py #将i18n.py的程序整合过来，并注意路径
+import json
+import locale
 #-----------------------------------------------------------------------------------------------------------#
 #下面来自inference_weui.py----从头到cut5函数为止
 '''
@@ -62,35 +63,6 @@ logging.getLogger("torchaudio._extension").setLevel(logging.ERROR)
 import pdb
 import torch
 
-# if os.path.exists("./gweight.txt"):
-#     with open("./gweight.txt", 'r', encoding="utf-8") as file:
-#         gweight_data = file.read()
-#         gpt_path = os.environ.get(
-#             "gpt_path", gweight_data)
-# else:
-#     gpt_path = os.environ.get(
-#         "gpt_path", "GPT_SoVITS/pretrained_models/s1bert25hz-2kh-longer-epoch=68e-step=50232.ckpt")
-
-# if os.path.exists("./sweight.txt"):
-#     with open("./sweight.txt", 'r', encoding="utf-8") as file:
-#         sweight_data = file.read()
-#         sovits_path = os.environ.get("sovits_path", sweight_data)
-# else:
-#     sovits_path = os.environ.get("sovits_path", "GPT_SoVITS/pretrained_models/s2G488k.pth")
-# gpt_path = os.environ.get(
-#     "gpt_path", "pretrained_models/s1bert25hz-2kh-longer-epoch=68e-step=50232.ckpt"
-# )
-# sovits_path = os.environ.get("sovits_path", "pretrained_models/s2G488k.pth")
-cnhubert_base_path = os.environ.get(
-    "cnhubert_base_path", "GPT_SoVITS/pretrained_models/chinese-hubert-base"
-)
-bert_path = os.environ.get(
-    "bert_path", "GPT_SoVITS/pretrained_models/chinese-roberta-wwm-ext-large"
-)
-infer_ttswebui = os.environ.get("infer_ttswebui", 9872)
-infer_ttswebui = int(infer_ttswebui)
-is_share = os.environ.get("is_share", "False")
-is_share = eval(is_share)
 if "_CUDA_VISIBLE_DEVICES" in os.environ:
     os.environ["CUDA_VISIBLE_DEVICES"] = os.environ["_CUDA_VISIBLE_DEVICES"]
 is_half = eval(os.environ.get("is_half", "True")) and not torch.backends.mps.is_available()
@@ -100,8 +72,8 @@ import numpy as np
 import librosa
 from feature_extractor import cnhubert
 
-bert_path =all_path+"\GPT_SoVITS\pretrained_models\chinese-roberta-wwm-ext-large"
-cnhubert_base_path=all_path+"\GPT_SoVITS\pretrained_models\chinese-hubert-base"
+bert_path =all_path+"\pretrained_models\chinese-roberta-wwm-ext-large"
+cnhubert_base_path=all_path+"\pretrained_models\chinese-hubert-base"
 
 for some_path in [bert_path, cnhubert_base_path]:#[gpt_path, sovits_path, bert_path, cnhubert_base_path]
     some_path = '/'.join(some_path.split('\\'))
@@ -113,6 +85,7 @@ from text.cleaner import clean_text
 from time import time as ttime
 from module.mel_processing import spectrogram_torch
 from my_utils import load_audio
+# from tools.i18n.i18n import I18nAuto
 
 cnhubert.cnhubert_base_path = cnhubert_base_path
 
@@ -121,6 +94,32 @@ os.environ["PYTORCH_CUDA_ALLOC_CONF"] = "max_split_size_mb:128"
 if hasattr(torch.cuda, 'empty_cache'):
     torch.cuda.empty_cache()
 
+modify_all_path = re.sub('/','\\\\', all_path)
+modify_all_path = '\\'.join(modify_all_path.split('\\')[:-1])
+#对i18n.py进行修改
+def load_language_list(language):
+    with open(f"{modify_all_path}/tools/i18n/locale/{language}.json", "r", encoding="utf-8") as f:
+        language_list = json.load(f)
+    return language_list
+
+class I18nAuto:
+    def __init__(self, language=None):
+        if language in ["Auto", None]:
+            language = locale.getdefaultlocale()[
+                0
+            ]  # getlocale can't identify the system's language ((None, None))
+        if not os.path.exists(f"{modify_all_path}/tools/i18n/locale/{language}.json"):
+            language = "en_US"
+        self.language = language
+        self.language_map = load_language_list(language)
+
+    def __call__(self, key):
+        return self.language_map.get(key, key)
+
+    def __repr__(self):
+        return "Use Language: " + self.language
+
+i18n = I18nAuto()
 
 os.environ['PYTORCH_ENABLE_MPS_FALLBACK'] = '1'  # 确保直接启动推理UI时也能够设置。
 
@@ -128,7 +127,6 @@ if torch.cuda.is_available():
     device = "cuda"
 else:
     device = "cpu"
-
 
 tokenizer = AutoTokenizer.from_pretrained(bert_path)
 bert_model = AutoModelForMaskedLM.from_pretrained(bert_path)
@@ -253,12 +251,12 @@ def get_spepc(hps, filename):
 
 
 dict_language = {
-    "中文": "all_zh",#全部按中文识别
-    "英文": "en",#全部按英文识别#######不变
-    "日文": "all_ja",#全部按日文识别
-    "中英混合": "zh",#按中英混合识别####不变
-    "日英混合": "ja",#按日英混合识别####不变
-    "多语种混合": "auto",#多语种启动切分识别语种
+    i18n("中文"): "all_zh",#全部按中文识别
+    i18n("英文"): "en",#全部按英文识别#######不变
+    i18n("日文"): "all_ja",#全部按日文识别
+    i18n("中英混合"): "zh",#按中英混合识别####不变
+    i18n("日英混合"): "ja",#按日英混合识别####不变
+    i18n("多语种混合"): "auto",#多语种启动切分识别语种
 }
 
 
@@ -392,11 +390,11 @@ def get_tts_wav(ref_wav_path, prompt_text, prompt_language, text, text_language,
     if not ref_free:
         prompt_text = prompt_text.strip("\n")
         if (prompt_text[-1] not in splits): prompt_text += "。" if prompt_language != "en" else "."
-        print("实际输入的参考文本:", prompt_text)
+        print(i18n("实际输入的参考文本:"), prompt_text)
     text = text.strip("\n")
     if (text[0] not in splits and len(get_first(text)) < 4): text = "。" + text if text_language != "en" else "." + text
     
-    print("实际输入的目标文本:", text)
+    print(i18n("实际输入的目标文本:"), text)
     zero_wav = np.zeros(
         int(hps.data.sampling_rate * 0.3),
         dtype=np.float16 if is_half == True else np.float32,
@@ -404,7 +402,7 @@ def get_tts_wav(ref_wav_path, prompt_text, prompt_language, text, text_language,
     with torch.no_grad():
         wav16k, sr = librosa.load(ref_wav_path, sr=16000)
         if (wav16k.shape[0] > 160000 or wav16k.shape[0] < 48000):
-            raise OSError("参考音频在3~10秒范围外，请更换！")
+            raise OSError(i18n("参考音频在3~10秒范围外，请更换！"))
         wav16k = torch.from_numpy(wav16k)
         zero_wav_torch = torch.from_numpy(zero_wav)
         if is_half == True:
@@ -424,21 +422,20 @@ def get_tts_wav(ref_wav_path, prompt_text, prompt_language, text, text_language,
         prompt_semantic = codes[0, 0]
     t1 = ttime()
 
-    if (how_to_cut == "凑四句一切"):
+    if (how_to_cut == i18n("凑四句一切")):
         text = cut1(text)
-    elif (how_to_cut == "凑50字一切"):
+    elif (how_to_cut == i18n("凑50字一切")):
         text = cut2(text)
-    elif (how_to_cut == "按中文句号。切"):
+    elif (how_to_cut == i18n("按中文句号。切")):
         text = cut3(text)
-    elif (how_to_cut == "按英文句号.切"):
+    elif (how_to_cut == i18n("按英文句号.切")):
         text = cut4(text)
-    elif (how_to_cut == "按标点符号切"):
+    elif (how_to_cut == i18n("按标点符号切")):
         text = cut5(text)
-    elif (how_to_cut == "按中英文句末标识符切"):
+    elif (how_to_cut == i18n("按中英文句末标识符切")):
         text = cut6(text)
     text = re.sub(r'\n+','\n', text)
-
-    print("实际输入的目标文本(切句后):", text)
+    print(i18n("实际输入的目标文本(切句后):"), text)
     texts = text.split("\n")
     texts = merge_short_text_in_array(texts, 5)
     audio_opt = []
@@ -450,9 +447,9 @@ def get_tts_wav(ref_wav_path, prompt_text, prompt_language, text, text_language,
         if (len(text.strip()) == 0):
             continue
         if (text[-1] not in splits): text += "。" if text_language != "en" else "."
-        print("实际输入的目标文本(每句):", text)
+        print(i18n("实际输入的目标文本(每句):"), text)
         phones2,bert2,norm_text2=get_phones_and_bert(text, text_language)
-        print("前端处理后的文本(每句):", norm_text2)
+        print(i18n("前端处理后的文本(每句):"), norm_text2)
         if not ref_free:
             bert = torch.cat([bert1, bert2], 1)
             all_phoneme_ids = torch.LongTensor(phones1+phones2).to(device).unsqueeze(0)
@@ -607,7 +604,6 @@ def cut6(inp):
     inp = re.sub(r'\.{2,}',' ', inp)
     return(re.sub(r'[。?？！!\.]','\n', inp))
 
-
 def custom_sort_key(s):
     # 使用正则表达式提取字符串中的数字部分和非数字部分
     parts = re.split('(\d+)', s)
@@ -625,7 +621,7 @@ def get_streaming_tts_wav(
     for chunk in chunks:
         yield chunk
 
-def handle(ref_wav_path, prompt_text, prompt_language, text, text_language, sovits_path, gpt_path, start=False, top_k=5, top_p=1, temperature=1, how_to_cut="凑四句一切", ref_free = False, stream=True):
+def handle(ref_wav_path, prompt_text, prompt_language, text, text_language, sovits_path, gpt_path, start=False, top_k=5, top_p=1, temperature=1, how_to_cut=i18n("凑四句一切"), ref_free = False, stream=True):
     '''
     sovits_path:sovits_weight_path
     gpt_path:gpt_weight_path
