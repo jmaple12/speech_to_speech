@@ -2,20 +2,31 @@
 # cmd:python,import nltk,  nltk.download('cmudict')
 import winsound
 import sys
+import re
 
 # 更改的地方：
 #1.源程序几个path的路径都写错了，不应该有GPT_Sovits/
 #2.all_path主要用于定位bert_path和cnhubert_base_path
-# 3.此外本程序里的load_language_list和I18nAuto里面的路径也要改
 # 4.517行detach的[0,0]位置改动
-# 5.i18n.py的内容我直接放在本文件里面了
 # 6.增加了禁用进度条的程序tqdm_replacement函数
 #7. 增加了get_streaming_tts_wav流式传输函数
 #8. 重写cut1函数，cut5中的punds添加英文:，更改了punds中重复的;
 #9. 新增cut6"按中英文句末标识符切"(中英文的句号问号叹号，超过一个.会变成空格)，修改get_tts_wav切句后的'/n'合并的语句。
 #10.更改all_path为系统路径，不需要再手动更改all_path地址了
 #11.删除原来"import torch"后面的无用变量名is_share，infer_ttswebui及原版bert_path，cnhubert_base_path的定义方式
+original_syspath = sys.path
 all_path = sys.path[0]
+all_path = re.sub('/','\\\\', all_path)
+
+#清理sys.path中相同路径
+syspathset = set()
+copy_syspath=[]
+for syspath in sys.path:
+    if syspath not in syspathset:
+        syspathset.add(syspath)
+        copy_syspath.append(syspath)
+sys.path = copy_syspath
+del syspathset,copy_syspath
 
 # 将标准输出流重定向到空设备（/dev/null）---在调用层执行
 # original_stdout =  sys.stdout
@@ -52,6 +63,12 @@ import locale
 全部按日文识别
 '''
 import os, re, logging
+now_dir = os.getcwd()
+change_ospath = sys.path[1]+'\\'+'\\'.join(all_path.split('\\')[:-1])
+os.chdir(change_ospath)
+#os.path更改后all_path也要与os.path对齐
+all_path = all_path.split('\\')[-1]
+
 import LangSegment
 logging.getLogger("markdown_it").setLevel(logging.ERROR)
 logging.getLogger("urllib3").setLevel(logging.ERROR)
@@ -72,8 +89,8 @@ import numpy as np
 import librosa
 from feature_extractor import cnhubert
 
-bert_path =all_path+"\pretrained_models\chinese-roberta-wwm-ext-large"
-cnhubert_base_path=all_path+"\pretrained_models\chinese-hubert-base"
+bert_path ="GPT_Sovits\pretrained_models\chinese-roberta-wwm-ext-large"
+cnhubert_base_path="GPT_Sovits\pretrained_models\chinese-hubert-base"
 
 for some_path in [bert_path, cnhubert_base_path]:#[gpt_path, sovits_path, bert_path, cnhubert_base_path]
     some_path = '/'.join(some_path.split('\\'))
@@ -85,41 +102,14 @@ from text.cleaner import clean_text
 from time import time as ttime
 from module.mel_processing import spectrogram_torch
 from my_utils import load_audio
-# from tools.i18n.i18n import I18nAuto
-
+from tools.i18n.i18n import I18nAuto
+i18n = I18nAuto()
 cnhubert.cnhubert_base_path = cnhubert_base_path
 
 #清理内存
 os.environ["PYTORCH_CUDA_ALLOC_CONF"] = "max_split_size_mb:128"
 if hasattr(torch.cuda, 'empty_cache'):
     torch.cuda.empty_cache()
-
-modify_all_path = re.sub('/','\\\\', all_path)
-modify_all_path = '\\'.join(modify_all_path.split('\\')[:-1])
-#对i18n.py进行修改
-def load_language_list(language):
-    with open(f"{modify_all_path}/tools/i18n/locale/{language}.json", "r", encoding="utf-8") as f:
-        language_list = json.load(f)
-    return language_list
-
-class I18nAuto:
-    def __init__(self, language=None):
-        if language in ["Auto", None]:
-            language = locale.getdefaultlocale()[
-                0
-            ]  # getlocale can't identify the system's language ((None, None))
-        if not os.path.exists(f"{modify_all_path}/tools/i18n/locale/{language}.json"):
-            language = "en_US"
-        self.language = language
-        self.language_map = load_language_list(language)
-
-    def __call__(self, key):
-        return self.language_map.get(key, key)
-
-    def __repr__(self):
-        return "Use Language: " + self.language
-
-i18n = I18nAuto()
 
 os.environ['PYTORCH_ENABLE_MPS_FALLBACK'] = '1'  # 确保直接启动推理UI时也能够设置。
 
@@ -475,10 +465,11 @@ def get_tts_wav(ref_wav_path, prompt_text, prompt_language, text, text_language,
                 early_stop_num=hz * max_sec,
             )
         t3 = ttime()
-        # print(pred_semantic.shape,idx)
+        # print(pred_semantic,idx)
         pred_semantic = pred_semantic[:, -idx:].unsqueeze(
             0
         )  # .unsqueeze(0)#mq要多unsqueeze一次
+        print(pred_semantic, pred_semantic.shape)
         refer = get_spepc(hps, ref_wav_path)  # .to(device)
         if is_half == True:
             refer = refer.half().to(device)
@@ -621,7 +612,7 @@ def get_streaming_tts_wav(
     for chunk in chunks:
         yield chunk
 
-def handle(ref_wav_path, prompt_text, prompt_language, text, text_language, sovits_path, gpt_path, start=False, top_k=5, top_p=1, temperature=1, how_to_cut=i18n("凑四句一切"), ref_free = False, stream=True):
+def handle(ref_wav_path, prompt_text, prompt_language, text, text_language, sovits_path, gpt_path, start=False, top_k=5, top_p=1, temperature=1, how_to_cut=i18n("凑四句一切"), ref_free = False, stream=True, audio_save=False, audio_save_file='output.wav'):
     '''
     sovits_path:sovits_weight_path
     gpt_path:gpt_weight_path
@@ -642,6 +633,11 @@ def handle(ref_wav_path, prompt_text, prompt_language, text, text_language, sovi
             )
             sampling_rate, audio_data = next(gen)
         if not start:
+
+            #存储音频
+            if audio_save:
+                sf.write(audio_save_file, audio_data, sampling_rate, format="wav")
+
             #wave存储二进制音频
             wav = BytesIO()
             sf.write(wav, audio_data, sampling_rate, format="wav")
@@ -650,6 +646,7 @@ def handle(ref_wav_path, prompt_text, prompt_language, text, text_language, sovi
             winsound.PlaySound(wav.read(), winsound.SND_MEMORY)
     
     else:
+        # 播放音频
         p = pyaudio.PyAudio()
         #来自inference_maple.py的wave_header_chunk
         stream = p.open(format = p.get_format_from_width(2),
@@ -657,14 +654,31 @@ def handle(ref_wav_path, prompt_text, prompt_language, text, text_language, sovi
                         rate = 32000,
                         frames_per_buffer=4096,
                         output = True)
+        if audio_save:
+            wf = wave.open(audio_save_file, 'wb')  
+            wf.setnchannels(1)  
+            wf.setsampwidth(2)  
+            wf.setframerate(32000) 
+            wf.writeframes(b'') 
+
         for chunk in get_streaming_tts_wav(
             ref_wav_path, prompt_text, prompt_language, text, text_language, how_to_cut, top_k, top_p, temperature, ref_free):
+            if audio_save:
+                wf.writeframes(chunk)
             stream.write(chunk)
+            
         stream.stop_stream()#暂停
         stream.close()#关闭
         p.terminate()
+            
         
 #恢复记录和进度条---调用段使用
 # sys.stdout = original_stdout
 # import tqdm
 tqdm.tqdm = tqdm_copy
+
+#把os.path改回来
+os.chdir(now_dir)
+# 把sys.path改回来
+
+sys.path = original_syspath[1:]
