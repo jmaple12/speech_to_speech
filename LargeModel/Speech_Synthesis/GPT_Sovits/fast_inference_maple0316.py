@@ -9,10 +9,14 @@ import re
 # 1.更改os.path，程序结尾将os.path改回来。
 # 2.text_segmentation_method.py修改cut1，增加按照中英文句号问号叹号结束的cut6(cut6没更新成功)
 # 3. TTS.py:因为我的python版本是3.8, 所以from typing import Tuple, 将 tuple改为Tuple
-
+#4. 加入handle函数。
+#5。 将sovit_path和gpt_path 作为handle的自变量引入，好像会慢一些。
 original_syspath = sys.path
 all_path = sys.path[0]
 all_path = re.sub('/','\\\\', all_path)
+
+#绝对路径，到GPT_Sovits
+abs_path = sys.path[1]+'\\'+sys.path[0]
 
 #清理sys.path中相同路径
 syspathset = set()
@@ -22,7 +26,7 @@ for syspath in sys.path:
         syspathset.add(syspath)
         copy_syspath.append(syspath)
 sys.path = copy_syspath
-del syspathset,copy_syspath
+del syspathset
 
 # 将标准输出流重定向到空设备（/dev/null）---在调用层执行
 # original_stdout =  sys.stdout
@@ -144,6 +148,7 @@ tts_pipline = TTS(tts_config)
 gpt_path = tts_config.t2s_weights_path
 sovits_path = tts_config.vits_weights_path
 
+
 def inference(text, text_lang, 
               ref_audio_path, prompt_text, 
               prompt_lang, top_k, 
@@ -168,6 +173,7 @@ def inference(text, text_lang,
         "return_fragment":False
     }
     
+    
     for item in tts_pipline.run(inputs):
         yield item
         
@@ -186,14 +192,27 @@ GPT_weight_root = "GPT_weights"
 os.makedirs(SoVITS_weight_root, exist_ok=True)
 os.makedirs(GPT_weight_root, exist_ok=True)
 
-
 def handle(text, text_lang, 
               ref_audio_path, prompt_text, 
               prompt_lang, top_k=5, 
               top_p=1, temperature=1, 
               text_split_method='按标点符号切', batch_size=1, 
               speed_factor=1, ref_text_free=False,
-              split_bucket=False, audio_save=False, audio_save_file='output.wav'):
+              split_bucket=False, audio_save=False, audio_save_file='output.wav', 
+              mygpt_path=None, mysovits_path=None):
+    
+    os.chdir(change_ospath)
+    sys.path = copy_syspath
+    if mygpt_path is None:
+        mygpt_path = gpt_path
+    if mysovits_path is None:
+        mysovits_path = sovits_path
+    
+    if not os.path.samefile(tts_pipline.configs.vits_weights_path, mysovits_path):
+        tts_pipline.init_vits_weights(mysovits_path)
+    if not os.path.samefile(tts_pipline.configs.t2s_weights_path, mygpt_path):
+        tts_pipline.init_t2s_weights(mygpt_path) 
+
     with torch.no_grad():
         gen = inference(text, text_lang, 
               ref_audio_path, prompt_text, 
@@ -203,7 +222,8 @@ def handle(text, text_lang,
               speed_factor, ref_text_free,
               split_bucket)
         sampling_rate, audio_data = next(gen)
-
+    os.chdir(now_dir)
+    sys.path = original_syspath[1:]
     if audio_save:
         sf.write('output.wav', audio_data, sampling_rate, format="wav")
     #wave存储二进制音频
