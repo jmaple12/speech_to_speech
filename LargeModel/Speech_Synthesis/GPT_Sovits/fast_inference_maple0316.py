@@ -3,20 +3,25 @@
 import winsound
 import sys
 import re
-
+import os
+import re
+now_dir = os.getcwd()
+original_path = sys.path
 #猜想：前期慢是路径太多了，
 #搞了半天是因为我的os_path不对，改一下os路径就好了、
-# 1.更改os.path，程序结尾将os.path改回来。
+# 0.在windows的环境变量-系统变量中添加 变量PYTHONPATH:GPT_SOVITS父级路径
+    #本程序路径"E:\LargeModel\Speech_Synthesis\gpt_sovits_inference\GPT_SoVITS"
+    #则将E:\LargeModel\Speech_Synthesis\gpt_sovits_inference"添加到环境变量
+# 1.更改将os.path更为GPT_SOVITS的父级路径，程序结尾将os.path改回来。
 # 2.text_segmentation_method.py修改cut1，增加按照中英文句号问号叹号结束的cut6(cut6没更新成功)
-# 3. TTS.py:因为我的python版本是3.8, 所以from typing import Tuple, 将 tuple改为Tuple
-#4. 加入handle函数。
-#5。 将sovit_path和gpt_path 作为handle的自变量引入，好像会慢一些。
-original_syspath = sys.path
-all_path = sys.path[0]
-all_path = re.sub('/','\\\\', all_path)
+# 3.TTS.py:因为我的python版本是3.8, 所以from typing import Tuple, 将 tuple改为Tuple
+# 4.加入handle函数。
+# 5.将sovit_path和gpt_path 作为handle的自变量引入，好像会慢一些。
 
-#绝对路径，到GPT_Sovits
-abs_path = sys.path[1]+'\\'+sys.path[0]
+#将os.path锁定为当前文件所在路径
+curr_path= [content for content in sys.path if re.match('.+:.*gpt_sovits_inference$', content)][0]
+os.chdir(curr_path)
+sys.path.append(curr_path+'\\GPT_SOVITS')
 
 #清理sys.path中相同路径
 syspathset = set()
@@ -60,12 +65,6 @@ import locale
 全部按英文识别
 全部按日文识别
 '''
-import os, sys
-now_dir = os.getcwd()
-change_ospath = sys.path[1]+'\\'+'\\'.join(all_path.split('\\')[:-1])
-os.chdir(change_ospath)
-#os.path更改后all_path也要与os.path对齐
-all_path = all_path.split('\\')[-1]
 
 import logging
 logging.getLogger("markdown_it").setLevel(logging.ERROR)
@@ -88,10 +87,10 @@ cnhubert_base_path = os.environ.get("cnhubert_base_path", None)
 bert_path = os.environ.get("bert_path", None)
 
 #默认模型路径
-bert_path =all_path+"\pretrained_models\chinese-roberta-wwm-ext-large"
-cnhubert_base_path=all_path+"\pretrained_models\chinese-hubert-base"
-gpt_path = all_path+"\pretrained_models\s1bert25hz-2kh-longer-epoch=68e-step=50232.ckpt"
-sovits_path = all_path+"\pretrained_models\s2G488k.pth"
+bert_path ="GPT_SoVITS\pretrained_models\chinese-roberta-wwm-ext-large"
+cnhubert_base_path="GPT_SoVITS\pretrained_models\chinese-hubert-base"
+gpt_path = "GPT_SoVITS\pretrained_models\s1bert25hz-2kh-longer-epoch=68e-step=50232.ckpt"
+sovits_path = "GPT_SoVITS\pretrained_models\s2G488k.pth"
 
 for some_path in [gpt_path, sovits_path, bert_path, cnhubert_base_path]:
     some_path = '/'.join(some_path.split('\\'))
@@ -131,7 +130,7 @@ cut_method = {
     i18n("按中英文句末标识符切"):"cut6"
 }
 
-tts_config = TTS_Config(all_path+"/configs/tts_infer.yaml")
+tts_config = TTS_Config("GPT_SoVITS/configs/tts_infer.yaml")
 tts_config.device = device
 tts_config.is_half = is_half
 if gpt_path is not None:
@@ -201,8 +200,7 @@ def handle(text, text_lang,
               split_bucket=False, audio_save=False, audio_save_file='output.wav', 
               mygpt_path=None, mysovits_path=None):
     
-    os.chdir(change_ospath)
-    sys.path = copy_syspath
+    os.chdir(curr_path)
     if mygpt_path is None:
         mygpt_path = gpt_path
     if mysovits_path is None:
@@ -223,7 +221,6 @@ def handle(text, text_lang,
               split_bucket)
         sampling_rate, audio_data = next(gen)
     os.chdir(now_dir)
-    sys.path = original_syspath[1:]
     if audio_save:
         sf.write('output.wav', audio_data, sampling_rate, format="wav")
     #wave存储二进制音频
@@ -235,4 +232,4 @@ def handle(text, text_lang,
 
 #把os.path改回来
 os.chdir(now_dir)
-sys.path = original_syspath[1:]
+sys.path = original_path

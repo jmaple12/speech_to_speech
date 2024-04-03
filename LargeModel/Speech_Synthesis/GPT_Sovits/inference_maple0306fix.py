@@ -1,22 +1,25 @@
 # pip install cn2an, pypinyin, jieba_fast, pyopenjtalk, g2p_en, pip3 install ffmpeg-python
 # cmd:python,import nltk,  nltk.download('cmudict')
 import winsound
-import sys
+import sys,os
 import re
 
 # 更改的地方：
-#1.源程序几个path的路径都写错了，不应该有GPT_Sovits/
 #2.all_path主要用于定位bert_path和cnhubert_base_path
 # 4.517行detach的[0,0]位置改动
 # 6.增加了禁用进度条的程序tqdm_replacement函数
 #7. 增加了get_streaming_tts_wav流式传输函数
 #8. 重写cut1函数，cut5中的punds添加英文:，更改了punds中重复的;
 #9. 新增cut6"按中英文句末标识符切"(中英文的句号问号叹号，超过一个.会变成空格)，修改get_tts_wav切句后的'/n'合并的语句。
-#10.更改all_path为系统路径，不需要再手动更改all_path地址了
 #11.删除原来"import torch"后面的无用变量名is_share，infer_ttswebui及原版bert_path，cnhubert_base_path的定义方式
-original_syspath = sys.path
-all_path = sys.path[0]
-all_path = re.sub('/','\\\\', all_path)
+#12. pred_semantic = pred_semantic[:, -idx:].unsqueeze( 
+#       改为pred_semantic = pred_semantic[0][-idx[0]:].unsqueeze(0).unsqueeze(0) 
+
+now_dir = os.getcwd()
+#将os.path锁定为当前文件所在路径
+curr_path= [content for content in sys.path if re.match('.+:.*gpt_sovits_inference$', content)][0]
+os.chdir(curr_path)
+
 
 #清理sys.path中相同路径
 syspathset = set()
@@ -62,12 +65,7 @@ import locale
 全部按英文识别
 全部按日文识别
 '''
-import os, re, logging
-now_dir = os.getcwd()
-change_ospath = sys.path[1]+'\\'+'\\'.join(all_path.split('\\')[:-1])
-os.chdir(change_ospath)
-#os.path更改后all_path也要与os.path对齐
-all_path = all_path.split('\\')[-1]
+import logging
 
 import LangSegment
 logging.getLogger("markdown_it").setLevel(logging.ERROR)
@@ -465,11 +463,13 @@ def get_tts_wav(ref_wav_path, prompt_text, prompt_language, text, text_language,
                 early_stop_num=hz * max_sec,
             )
         t3 = ttime()
-        # print(pred_semantic,idx)
-        pred_semantic = pred_semantic[:, -idx:].unsqueeze(
+        # print(pred_semantic.shape,idx)
+        idx = idx[0]
+        pred_semantic=pred_semantic[0]
+        # print(idx, pred_semantic)
+        pred_semantic = pred_semantic[-idx:].unsqueeze(
             0
-        )  # .unsqueeze(0)#mq要多unsqueeze一次
-        print(pred_semantic, pred_semantic.shape)
+        ).unsqueeze(0)  # .unsqueeze(0)#mq要多unsqueeze一次
         refer = get_spepc(hps, ref_wav_path)  # .to(device)
         if is_half == True:
             refer = refer.half().to(device)
@@ -679,6 +679,3 @@ tqdm.tqdm = tqdm_copy
 
 #把os.path改回来
 os.chdir(now_dir)
-# 把sys.path改回来
-
-sys.path = original_syspath[1:]
