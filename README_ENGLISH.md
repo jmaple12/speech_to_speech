@@ -1,4 +1,4 @@
-[中文介绍请点击这里](https://github.com/jmaple12/speech_to_speech/blob/main/%E4%BB%8B%E7%BB%8D.md)
+[中文介绍请点击这里](https://github.com/jmaple12/speech_to_speech/blob/main/README.md)
 
 # voice conversation 
 
