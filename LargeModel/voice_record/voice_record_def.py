@@ -7,13 +7,14 @@ def listen(WAVE_OUTPUT_FILENAME, tag, delayTime=2, tendure=2, mindb = 500):
     delaytime:说话声音小持续多少秒就结束；----超过delaytime时候本波次录音结束
     tendure:完全空白录音忍耐时长，超过这个时间结本轮录音结束
     mindb:接受的最低音量
+    输出：sign=1表示长时间空白，tag=0表示开头（打印用户：请输入...)
     '''
     sign = 0 #判断是否持续空白输入，若是，sign=1，若声音从大道持续小，sign=2
     CHUNK = 1024
     FORMAT = pyaudio.paInt16
-    CHANNELS = 2
-    RATE = 44100
-    RECORD_SECONDS = 2
+    CHANNELS = 1
+    RATE = 32000
+    # RECORD_SECONDS = 2
     # WAVE_OUTPUT_FILENAME = outfile_name
     # mindb = 500  # 最小声音，大于则开始录音，否则结束
     # delayTime = 1.5  # 小声1.5秒后自动终止
@@ -89,3 +90,4 @@ def listen(WAVE_OUTPUT_FILENAME, tag, delayTime=2, tendure=2, mindb = 500):
     wf.writeframes(b''.join(frames))
     wf.close()
     return(sign, tag)
+
