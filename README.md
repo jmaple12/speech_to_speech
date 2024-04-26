@@ -7,7 +7,7 @@
   需要下载仓库中的
   [LargeModel/Gradio_Python](https://github.com/jmaple12/speech_to_speech/tree/main/LargeModel/Gradio_Python)、
   [LargeModel/kaldi/sherpa_onnx_model](https://github.com/jmaple12/speech_to_speech/tree/main/LargeModel/kaldi/sherpa_onnx_model)
-  以及Github上的[GPT_SOVITS的fast_inference分支](https://github.com/RVC-Boss/GPT-SoVITS/tree/fast_inference_)，在其主目录加入本仓库GPT_SOVITS中的[api_v2开头的三个文件](https://github.com/jmaple12/speech_to_speech/tree/main/LargeModel/Speech_Synthesis/gpt_sovits_fast_inference/GPT-SoVITS)，下载Ollama并安装里面的QWEN任意系列模型。
+  以及Github上的[GPT_SOVITS的fast_inference分支](https://github.com/RVC-Boss/GPT-SoVITS/tree/fast_inference_)，在其主目录加入本仓库GPT_SOVITS中的[api_v2开头的三个文件](https://github.com/jmaple12/speech_to_speech/tree/main/LargeModel/Speech_Synthesis/gpt_sovits_fast_inference/GPT-SoVITS)，下载Ollama并安装里面的模型。
 
   打开[Gradio Webui](https://github.com/jmaple12/speech_to_speech/tree/main/LargeModel/Gradio_Python/webui)，双击里面的 run.bat 运行网页，初次运行需要在“chat"栏目下的两个文本框内写入[TTS-API](https://github.com/jmaple12/speech_to_speech/blob/main/LargeModel/kaldi/sherpa_onnx_model/sherpa_onnx_speech_recognizier.bat)以及[ASR-API](https://github.com/jmaple12/speech_to_speech/blob/main/LargeModel/Speech_Synthesis/gpt_sovits_fast_inference/GPT-SoVITS/api_v2_maple.bat)的文件路径。
 
