@@ -7,7 +7,7 @@ import sys
 import glob
 import re
 
-def fast_whisper_opt(model, input_audio, initial_prompt=None):
+def fast_whisper_opt(model, input_audio, initial_prompt=None, transcribe_params = {}):
 
     '''
     input_audio:输入音频位置
@@ -19,8 +19,12 @@ def fast_whisper_opt(model, input_audio, initial_prompt=None):
     # input_audio = r"D:\Desktop\test.mp3"
 
     #jupyter死机的原因是D:\Anaconda\Library 中有一个libiomp5md.dl，与其他地方的同一个文件冲突
-
-    segments,_ = model.transcribe(input_audio, initial_prompt=initial_prompt, word_timestamps=False)
+    segments,_ = model.transcribe(
+        input_audio, 
+        initial_prompt=initial_prompt,
+        word_timestamps=False,
+        **transcribe_params
+        )
     segments = ','.join([segment.text for segment in segments])
     return(segments)
 # print(fast_whisper_opt(r'D:\Desktop\test.wav'))
@@ -39,7 +43,7 @@ def delete_files(folder_path):
             if re.search('test\d+\..{3}$', file_path):
                 os.remove(file_path)
 
-def fast_whisper_realtime(audio_file_path, model, delayTime=0.8, tendure=3, mindb=2000, initial_prompt=None):
+def fast_whisper_realtime(audio_file_path, model, delayTime=0.8, tendure=3, mindb=2000, transcribe_params={}, initial_prompt=None):
     output_word=''
     result=''
     # 调用函数删除文件夹中的文件
@@ -53,7 +57,7 @@ def fast_whisper_realtime(audio_file_path, model, delayTime=0.8, tendure=3, mind
         sign, tag = listen(out_audio, tag, delayTime=delayTime, tendure=tendure, mindb = mindb)
         #jupyter死机的原因是D:\Anaconda\Library 中有一个libiomp5md.dl，与其他地方的同一个文件冲突
         if sign !=1:
-            result = fast_whisper_opt(model, out_audio, initial_prompt=initial_prompt)
+            result = fast_whisper_opt(model, out_audio, initial_prompt=initial_prompt, transcribe_params=transcribe_params)
             audio_num +=1
             print(result, end='')
             output_word += result

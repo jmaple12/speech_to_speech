@@ -1,0 +1,20 @@
+custom:
+  bert_base_path: GPT_SoVITS\pretrained_models\chinese-roberta-wwm-ext-large
+  cnhuhbert_base_path: GPT_SoVITS\pretrained_models\chinese-hubert-base
+  device: cuda
+  flash_attn_enabled: true
+  is_half: true
+  t2s_weights_path: "E:\\LargeModel\\Speech_Synthesis\\GPT_SOVITS_0\u8BAD\u7EC3\u96C6\
+    \\\u81EA\u5DF1\u7684\u6A21\u578B\\\u59EC\u5982\u5343\u6CF7\\\u8BAD\u7EC3\u96C6\
+    _denoise\\yueer_denoise-e25.ckpt"
+  vits_weights_path: "E:\\LargeModel\\Speech_Synthesis\\GPT_SOVITS_0\u8BAD\u7EC3\u96C6\
+    \\\u81EA\u5DF1\u7684\u6A21\u578B\\\u59EC\u5982\u5343\u6CF7\\\u8BAD\u7EC3\u96C6\
+    _denoise\\yueer_denoise_e25_s575.pth"
+default:
+  bert_base_path: GPT_SoVITS/pretrained_models/chinese-roberta-wwm-ext-large
+  cnhuhbert_base_path: GPT_SoVITS/pretrained_models/chinese-hubert-base
+  device: cpu
+  flash_attn_enabled: true
+  is_half: false
+  t2s_weights_path: GPT_SoVITS/pretrained_models/s1bert25hz-2kh-longer-epoch=68e-step=50232.ckpt
+  vits_weights_path: GPT_SoVITS/pretrained_models/s2G488k.pth

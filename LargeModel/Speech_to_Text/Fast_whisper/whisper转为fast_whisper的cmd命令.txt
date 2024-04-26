@@ -1,1 +1,3 @@
+pip install ctranslate2
+
 ct2-transformers-converter --model E:\LargeModel\Speech_to_Text\Whisper\Model\small --output_dir E:\LargeModel\Speech_to_Text\fast_whisper\small --copy_files tokenizer.json preprocessor_config.json --quantization float32

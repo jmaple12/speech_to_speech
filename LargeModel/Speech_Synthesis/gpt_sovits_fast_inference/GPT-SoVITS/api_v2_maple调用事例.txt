@@ -1,0 +1,14 @@
+##更改yaml的默认模型参数（永久更改）（每个链接需要一次次运行）
+http://127.0.0.1:9880/set_gpt_weights?weights_path=E:\LargeModel\Speech_Synthesis\GPT_SOVITS_0训练集\自己的模型\姬如千泷\训练集_denoise\yueer_denoise-e25.ckpt
+
+http://127.0.0.1:9880/set_sovits_weights?weights_path=E:\LargeModel\Speech_Synthesis\GPT_SOVITS_0训练集\自己的模型\姬如千泷\训练集_denoise\yueer_denoise_e25_s575.pth
+
+
+###推理参数（添加模型路径的时候，每读一段文本都要重新初始化模型，会让api变得慢）
+http://127.0.0.1:9880/tts?text= &text_lang=zh&ref_audio_path=E:\LargeModel\Speech_Synthesis\GPT_SOVITS_0训练集\自己的模型\姬如千泷\训练集_denoise\这是一个传承了千年尊贵的名字。.wav&prompt_lang=zh&prompt_text=这是一个传承了千年尊贵的名字。&text_split_method=cut5&batch_size=8&seed=4242&media_type=wav&streaming_mode=true&gpt_weights=E:\LargeModel\Speech_Synthesis\GPT_SOVITS_0训练集\自己的模型\姬如千泷\训练集_denoise\yueer_denoise-e25.ckpt&sovits_weights=E:\LargeModel\Speech_Synthesis\GPT_SOVITS_0训练集\自己的模型\姬如千泷\训练集_denoise\yueer_denoise_e25_s575.pth
+
+
+修改config中的模型地址为默认地址：
+http://127.0.0.1:9880/set_gpt_weights?weights_path=GPT_SoVITS/pretrained_models/s1bert25hz-2kh-longer-epoch=68e-step=50232.ckpt
+http://127.0.0.1:9880/set_sovits_weights?weights_path=GPT_SoVITS/pretrained_models/s2G488k.pth
+

@@ -1,0 +1,6 @@
+1. 让视频输出为简体：
+whisper 音频位置 --model small/medium --language zh --initial_prompt "以下是普通话的句子。"
+
+2. 模型位置在
+C:\Users\maple\.cache\whisper下面
+修改后的模型位置在--model_dir E:\LargeModel\Speech_to_Text\Whisper\Model
