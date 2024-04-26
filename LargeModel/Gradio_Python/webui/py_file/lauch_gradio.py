@@ -265,14 +265,7 @@ with gr.Blocks(css=main_css) as demo:
     #--------------------------Chat 界面---------------------------------#
     with gr.Tab('Chat'):
         with gr.Row():
-            with gr.Column(min_width=250):
-                #刷新按钮
-                # save_params_button_copy = gr.Button('refresh current saved params')
-                #展示保存的参数字典--展示键值----仅仅刷新页面并不能更新mycpp--copy
-                saved_params_display_copy = gr.Dropdown(label='saved_params_display_copy', choices=myccp.display_params_name())
-                #固定值的按钮---代替字符串使用
-                refresh_params_dp_copy = gr.Textbox(value='refresh', visible=False)
-
+            with gr.Column(min_width=200):
                 #聊天记录保存
                 #保存的聊天记录存储到save_chat_json(隐藏)
                 save_chat_json = gr.Json({}, visible=False, value=model_run.load_history_json_file())
@@ -304,10 +297,10 @@ with gr.Blocks(css=main_css) as demo:
                 #点击展示tts的可调节参数
                 show_tts_params = gr.Button("click to open tts params")
                 #tts,每一轮 text to speech转写完成的标志
-                tts_finish_flag =gr.Number(0, label="tts finish flag", visible=True)
+                tts_finish_flag =gr.Number(0, label="tts finish flag", visible=False)
 
                 
-            with gr.Column(min_width=600, scale=8, visible=True):
+            with gr.Column(min_width=400, scale=6, visible=True):
                 #定义聊天区域
                 chatbot = gr.Chatbot(
                     [],
@@ -351,29 +344,35 @@ with gr.Blocks(css=main_css) as demo:
                 # #点击“chat”的反应
                 # commit_btn = gr.Button("chat",scale=1)
 
+            with gr.Column(min_width=200):
+                #展示保存的参数字典--展示键值
+                saved_params_display_copy = gr.Dropdown(label='saved_params_display_copy', choices=myccp.display_params_name())
+                #固定值的按钮---代替字符串使用
+                refresh_params_dp_copy = gr.Textbox(value='refresh', visible=False)
 
-        #-----------------ASR----------------------------------#
-        #计时器
-        time_count = gr.Number(0, visible=False, label='time count')
-        ##开启asr按钮---打开
-        with gr.Row():
-            #star_asr的值不能轻易改
-            start_asr = gr.Button("start asr",)
-            end_asr = gr.Button("asr launched", visible=False)
-            #当语音对话结束时，开启新一轮对话的按钮
-            new_asr_request = gr.Button("launch asr chat")
-            #asr_api地址
-            asr_api_path = gr.Textbox(label='asr api path', value=bat_path_text_cache['asr'].strip('\'').strip('"') if bat_path_text_cache['asr'] else None,)
-            asr_api_path.submit(lambda xxx:loads_bat_path_text(xxx, 'asr'), asr_api_path, None)
-            #是否开启asr服务
-            start_asr_flag = gr.Number(value=0, label="start asr service or not", visible=False)
-            asr_text_process = gr.Textbox(label="show asr process", show_label=False, placeholder="show asr process", scale=30, container=False)
-        with gr.Row(visible=False):
-            asr_pid = gr.Textbox(visible=True, label="asr_pid")
-            asr_url = gr.Textbox(visible=True, label="asr_url")
-            asr_port = gr.Textbox(visible=True, label="asr_port")
-            asr_url.change(lambda x:x.split(':')[-1] if ':' in x else None, asr_url, asr_port)
-        asr_show_len = gr.Number(0, label="the asr_text_process has shown length for asr", visible=False)
+                #-----------------ASR----------------------------------#
+                #计时器
+                time_count = gr.Number(0, visible=False, label='time count')
+                ##开启asr按钮---打开
+                with gr.Row():
+                    #是否开启asr服务
+                    start_asr_flag = gr.Number(value=0, label="start asr service or not", visible=False)
+                    asr_text_process = gr.TextArea(label="show asr process", show_label=False, placeholder="show asr process", scale=30, container=False,)
+                with gr.Row(visible=False):
+                    asr_pid = gr.Textbox(visible=True, label="asr_pid")
+                    asr_url = gr.Textbox(visible=True, label="asr_url")
+                    asr_port = gr.Textbox(visible=True, label="asr_port")
+                    asr_url.change(lambda x:x.split(':')[-1] if ':' in x else None, asr_url, asr_port)
+                asr_show_len = gr.Number(0, label="the asr_text_process has shown length for asr", visible=False)
+                #asr_api地址
+                asr_api_path = gr.Textbox(label='asr api path', value=bat_path_text_cache['asr'].strip('\'').strip('"') if bat_path_text_cache['asr'] else None,)
+                asr_api_path.submit(lambda xxx:loads_bat_path_text(xxx, 'asr'), asr_api_path, None)
+                with gr.Row():
+                    #star_asr的值不能轻易改
+                    start_asr = gr.Button("start asr",)
+                    end_asr = gr.Button("asr launched", visible=False)
+                    #当语音对话结束时，开启新一轮对话的按钮
+                    new_asr_request = gr.Button("launch asr chat")
 
         #--------------------------TTS Pamras------------------------#
         #tts_参数
@@ -524,7 +523,7 @@ with gr.Blocks(css=main_css) as demo:
     time_count.change(get_asr_process, asr_show_len, [asr_text_process,asr_show_len], show_progress='hidden')
 
     #txt_submit提交成功后：先清空asr_text_process，当tts服务未开启时，asr服务开启时，请求语音转写
-    chat_end_flag.change(lambda :gr.Textbox(None), None, asr_text_process).then(lambda xxx,yyy,zzz: begin_next_epoch_asr() if (xxx==1)&(yyy==0)&(zzz==1) else "", [chat_end_flag,start_tts_service, start_asr_flag], txt_submit)
+    chat_end_flag.change(lambda :gr.TextArea(None), None, asr_text_process).then(lambda xxx,yyy,zzz: begin_next_epoch_asr() if (xxx==1)&(yyy==0)&(zzz==1) else "", [chat_end_flag,start_tts_service, start_asr_flag], txt_submit)
     
     #一轮tts转写结束及tts_finish_flag变为1后若asr服务开启，请求语音转写--使用winsound.Beep(500,500)作为接受语音进行转写的提示音
     tts_finish_flag.change(lambda xxx,yyy: begin_next_epoch_asr() if (xxx==1)&(yyy==1) else "", [tts_finish_flag,start_asr_flag], txt_submit)
