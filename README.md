@@ -1,80 +1,95 @@
-[中文介绍请点击这里](https://github.com/jmaple12/speech_to_speech/blob/main/%E4%BB%8B%E7%BB%8D.md)
+[English Introduction Please Click Here](https://github.com/jmaple12/speech_to_speech/blob/main/README_ENGLISH.md)
 
-# voice conversation 
+## 更新20240427
 
-　　Combine several AI model to achieve speech to speech, which wil also reduce some performance. I only share my way in windows environment, pytorch and cuda is needed.     
+  现在基于ollama(LLM模型平台), kalidi-sherpa-onnx(ASR模型), gpt_sovits(TTS模型)以及Gradio，我得到了一个简易的本地语音聊天的网页。
 
-　　Now I begin to show the file folder meaning and some model needed to download. 
+  需要下载仓库中的
+  [LargeModel/Gradio_Python](https://github.com/jmaple12/speech_to_speech/tree/main/LargeModel/Gradio_Python)、
+  [LargeModel/kaldi/sherpa_onnx_model](https://github.com/jmaple12/speech_to_speech/tree/main/LargeModel/kaldi/sherpa_onnx_model)
+  以及Github上的[GPT_SOVITS的fast_inference分支](https://github.com/RVC-Boss/GPT-SoVITS/tree/fast_inference_)，在其主目录加入本仓库GPT_SOVITS中的[api_v2开头的三个文件](https://github.com/jmaple12/speech_to_speech/tree/main/LargeModel/Speech_Synthesis/gpt_sovits_fast_inference/GPT-SoVITS)，下载Ollama并安装里面的模型。
 
-## voice_record
+  打开[Gradio Webui](https://github.com/jmaple12/speech_to_speech/tree/main/LargeModel/Gradio_Python/webui)，双击里面的 run.bat 运行网页，初次运行需要在“chat"栏目下的两个文本框内写入[TTS-API](https://github.com/jmaple12/speech_to_speech/blob/main/LargeModel/kaldi/sherpa_onnx_model/sherpa_onnx_speech_recognizier.bat)以及[ASR-API](https://github.com/jmaple12/speech_to_speech/blob/main/LargeModel/Speech_Synthesis/gpt_sovits_fast_inference/GPT-SoVITS/api_v2_maple.bat)的文件路径。
 
-　　I define a function named **listen** to achieve automatically record man's voice and stop when speak is over. This function is here[voice_record_def.py](https://github.com/jmaple12/speech_to_speech/blob/main/LargeModel/voice_record/voice_record_def.py)
+# 本地语音对话
+
+　　我在本项目里缝合了多个AI模型，来实现语音对话的功能，当然硬将多个不同功能的模型糅合在一起会浪费一些计算机性能。
+    这里我仅仅分享自己在windows系统中如何搭建多个AI模型，然后缝合的代码在[languagemodel](https://github.com/jmaple12/speech_to_speech/tree/main/LargeModel)里面。为了使用AI模型，首先得下载GPU版本的torch以及对应的cudnn。 
+    
+　　下面我将要介绍[languagemodel](https://github.com/jmaple12/speech_to_speech/tree/main/LargeModel)里各个子文件夹的意义以及需要下载的东西，我主要展示自己的缝合代码。
+
+## 录音
+
+　　我定义了“Listen”函数来实现自动录音，当人声停止的时候，它能自动停止录音。这个函数在这里[voice_record_def.py](https://github.com/jmaple12/speech_to_speech/blob/main/LargeModel/voice_record/voice_record_def.py)。
 ```        
 def listen(WAVE_OUTPUT_FILENAME, tag, delayTime=2, tendure=2, mindb = 500):
 return(sign, tag)
 ```
-　　where the **WAVE_OUTPUT_FILENAME** is the recording file path,  sign=1 means it record nothing, **mindb** means the minimum decibel it will record. If it has received some sound before, the function will be end if it dosen't receive sound after **delayTime** seconds, and the function only endure **tendure** seconds blank sound, the sound record will stop if the blank sound is longer.   
-  
-　　In [combine.ipynb](https://github.com/jmaple12/speech_to_speech/blob/main/LargeModel/Combine/combine.ipynb), your sound record will be cut several section, when your sound pause exceed **delayTime** seconds, the sound will be temporarily saved in [test](https://github.com/jmaple12/speech_to_speech/tree/main/LargeModel/Combine/test) file, and if your sound pause exceed **tendure** seconds, the sound record will be end until the next round conversation is start.  
+　　其中**WAVE_OUTPUT_FILENAME**是设定的存放录音文件的路径，“Listen”里的“sign”变量用来记录该次录音是否记录到了声音，当“sign=1”时表明本次录音什么声音都没有录到。**mindb**表示能录到的最小分贝值。如果之前录到了声音，且之后连续**delayTime** 秒没有接收到新的声音，录音会停止， 如果全程持续**tendure**秒没有录到声音，录音也会停止，并且此时“sign=1”来表示整个录音过程都没有录到声音。 
 
-## Sound to Text/ASR
-### faster_whisper  
-　　In this section I use the Speech Recognition Model Fast_Whisper, we need to download the model according to [fast-whisper](https://github.com/SYSTRAN/faster-whisper), or from [huggingface-large-v3](https://huggingface.co/Systran/faster-whisper-large-v3) or its mirror site [mirror-large-v3](https://hf-mirror.com/Systran/faster-whisper-large-v3)　and put it in [large-v3](https://github.com/jmaple12/speech_to_speech/blob/main/LargeModel/Speech_to_Text/Fast_whisper/large-v3) folder, and we can also download other size model, it decided by our computer performance.  
+　　在[LargeModel/Combine/combine.ipynb](https://github.com/jmaple12/speech_to_speech/blob/main/LargeModel/Combine/combine.ipynb)的录音板块中，一轮录音会执行多次“listen”函数。我们输入语音的时候，每次稍长时间的停顿（超过**delayTime**秒），“Listen”就会记录一次录音结果，将此波次的录音音频存储到指定文件夹[test](https://github.com/jmaple12/speech_to_speech/tree/main/LargeModel/Combine/test)，并执行下一波次的“listen”函数，直到“listen”函数接收到一波时长超过**tendure** 秒的空白录音，到此一轮录音结束。
+
+　　在[LargeModel/Combine/combine.ipynb](https://github.com/jmaple12/speech_to_speech/blob/main/LargeModel/Combine/combine.ipynb)里面，每有记录一波录音，专门的ASR模型会自动将其转为文本，并与之前转换的文本连接起来，在整轮录音及转换文字完成后送到文本生成模型中去。
   
-　　Besides, [fast_whisper.ipynb](https://github.com/jmaple12/speech_to_speech/blob/main/LargeModel/Speech_to_Text/Fast_whisper/fast_whisper.ipynb) can automatically create caption file(.srt) of an audio, it may reduce work for somebody.
+## 声音转文本/ASR
+### faster_whisper  
+　　这一部分我首先介绍语音识别模型Faster_whisper，它是对Whisper进行C语言的重新编译而得到，与Whisper相比占用更低，速度更快。首先我们需要在[fast-whisper](https://github.com/SYSTRAN/faster-whisper)查看模型介绍，在[huggingface-large-v3](https://huggingface.co/Systran/faster-whisper-large-v3)或镜像站[mirror-large-v3](https://hf-mirror.com/Systran/faster-whisper-large-v3)下载模型，large-v3版本的faster_whisper在int8版本下大约需要3.5G显存，float16版本下大约需要4G多显存，如果显存低于4G，可以去下载它的small或者medium版本。需要注意large-v3的训练集里面有中文，其他低版本的训练集里面没有中文。此外， [fast_whisper.ipynb](https://github.com/jmaple12/speech_to_speech/blob/main/LargeModel/Speech_to_Text/Fast_whisper/fast_whisper.ipynb) 给出了为音频文件生成(srt)格式字幕的办法。
+
+   faster_whisper转换地比较准确，甚至可以转换出标点符号，不过录音的时候如果不说话，它可能会转换处奇怪的话，或者出现错误。而且转换略有延时。
 
 ### sherpa
-　　Because of poor video memory, I also try to use other tools. sherpa is a model based on kaldi, I　use its onnx version. Because I fail to install its GPU version, therefore, I use its CPU version. Its performance is better than my expectation. Firstly, it can translate the voice as soon as I say it, though it doesn't translate correctly as better as fast_whisper, I think its performance is OK for medium requirement. And some of their models supports both Chinese and English.   
+　　因为我的电脑性能较差，除了深度学习大模型，我也尝试了对设备要求较低的模型，比如这个onnx版本的sherpa。它是基于新一代kaldi（小米集团语音首席科学家Daniel Povey开发的）的机器学习语音识别模型。优点就是识别特别快，基本上能做到实时语音转换，并且它的有些预训练模型同时支持中英文转换。其次就是它是轻量级模型，在CPU上基本就能实现实时语音转换，对机器要求低，甚至可以在安卓机上运行。但是缺点是与fast_whisper相比，它还不够准确，只能说对要求不高且设备性能有限的人来说够用，而且它无法转换出来标点符号。它的CPU版本安装比较容易，教程也比较多，但是GPU版本我至今没有安装成功，GPU版本的性能应该比CPU好很多。  
 
-　　install sherpa_onnx windows can be found on[sherpa_onnx](https://k2-fsa.github.io/sherpa/onnx/install/windows.html#bit-windows-x64), and its python package install can be found on [sherpa-onnx python](https://k2-fsa.github.io/sherpa/onnx/python/install.html#method-1-from-pre-compiled-wheels). Its real-time-speech-recongition issue can be found on[real-time-speech-recongition](https://k2-fsa.github.io/sherpa/onnx/python/real-time-speech-recongition-from-a-microphone.html), and its pretrained model can be download on[pretrained model](https://github.com/k2-fsa/sherpa-onnx/releases/tag/asr-models). 
+　　安装Windows版本的sherpa_onnx可以在[sherpa_onnx](https://k2-fsa.github.io/sherpa/onnx/install/windows.html#bit-windows-x64)找到，根据[sherpa-onnx python](https://k2-fsa.github.io/sherpa/onnx/python/install.html#method-1-from-pre-compiled-wheels)可以安装它的python扩展包，它的实时语音转换教程可以在[real-time-speech-recongition](https://k2-fsa.github.io/sherpa/onnx/python/real-time-speech-recongition-from-a-microphone.html)找到，除此之外还有根据音频文件转录文本的教程。它的预训练模型可以在[pretrained model github](https://github.com/k2-fsa/sherpa-onnx/releases/tag/asr-models)或[pretrained model ks-fsa](https://k2-fsa.github.io/sherpa/onnx/pretrained_models/index.html)下载。“新一代Kaldi”是他们的公众号，b站也有他们的账号，还有演示。  
 
-　　In [LargeModel/kalid/sherpa_onnx/microphone_endpoint.py](https://github.com/jmaple12/speech_to_speech/blob/main/LargeModel/kalid/sherpa_onnx/microphone_endpoint.py), I modify the [python-api-examples/speech-recognition-from-microphone-with-endpoint-detection.py](https://github.com/k2-fsa/sherpa-onnx/blob/master/python-api-examples/speech-recognition-from-microphone-with-endpoint-detection.py) so that I can directly use its "main" function in python.       
+　　为了在python中直接调用语音转文字的功能，在[LargeModel/kalid/sherpa_onnx/microphone_endpoint.py](https://github.com/jmaple12/speech_to_speech/blob/main/LargeModel/kalid/sherpa_onnx/microphone_endpoint.py)中，我修改了官方[python-api-examples/speech-recognition-from-microphone-with-endpoint-detection.py](https://github.com/k2-fsa/sherpa-onnx/blob/master/python-api-examples/speech-recognition-from-microphone-with-endpoint-detection.py)实时语音检测的部分代码。官方代码是用在cmd中的。在python中直接调用microphone_endpoint.py的main函数就可以进行录音并输出转换的文字了。
 
-## Large language Model
+### whisper
+　　whisper可以在[github:openai/whisper](https://github.com/openai/whisper)找到它的详情，[large-v3](https://hf-mirror.com/openai/whisper-large-v3)是它在huggingface镜像站的large-v3模型仓库。用法跟faster_whisper类似，github里面有它的介绍。
 
-　　And then we need to download large LLM, I use [Google Gemma](https://github.com/google/gemma_pytorch), and I use it through [ollama](https://github.com/ollama/ollama), in [ollama weibsite](https://ollama.com/), download its application, and execute below code in cmd
+## 大语言模型
+
+　　前面步骤做好后就需要下载文本生成的大语言模型了。我使用的是 [Google Gemma](https://github.com/google/gemma_pytorch)，它是新出的在同尺寸开源模型中表现最好的。我通过ollama使用它，ollama的官网是[ollama weibsite](https://ollama.com/)。在官网下载ollama软件后，在cmd执行下面命令
 ```
 ollama run gemma:7b
 or
 ollama run gemma:2b
 ```
-and then we can use the gemma model. 
+　　它会自动下载对应版本的gemma模型，调用方法可以参见仓库里面[Gemme_worse_the_cmd.ipynb](https://github.com/jmaple12/speech_to_speech/blob/main/LargeModel/Language_Model/Gemma/Gemme_worse_the_cmd.ipynb)程序，它支持流式生成文本。
 
-## Text_to_Voice/Speech_Synthesis
+## TTS/语音合成
 
-### Text_to_Voice
+### TTS(Text to Speech)
 
-　　**pyttsx3** can directly use the windows system voice package, and it consumes minimal resources but its voice is bad. 
+　　**pyttsx3** 是python的一个扩展包，他能直接调用Windows系统的语音包，它对设备要求低，但是它发出的声音很单一，也不好听。除此之外，还有名为**speech**的扩展包，它比**pyttsx3**更轻量简易，但是声音更糟糕。
 
-### Speech_Synthesis
+### 语音合成
 
-　　On the other hand, we can also use Speech_Synthesis Model to create our own sound, I use GPT_Sovits Model[GPT_Sovits Model](https://github.com/RVC-Boss/GPT-SoVITS),its new version for windows is here[windows Integration package0306](https://www.123pan.com/s/5tIqVv-GVRcv.html), it gives a package to process from audio cleaning to audio_model_train and model_inference. It contains a pretained model about Paimon's voice, I think it is enough, therefore, I use its pretained model and then I only focus on its inference section.   
+　　另一方面，我们可以使用语音合成模型来生成自定义的声音。我使用的是[GPT_Sovits Model](https://github.com/RVC-Boss/GPT-SoVITS)模型，这个模型现在有很多分支模型，在b站搜索名字GPT Sovits能看到很多。目前官方的最新版本是[windows Integration package0306fix](https://www.123pan.com/s/5tIqVv-GVRcv.html)。这是针对Windows用户的整合包，包含了前期音频降噪人声分离等操作所需工具，囊括了从音频清洗、模型训练到推理全过程，全程在网页操作，对新人比较友好。整合包里面已经包含了一个派蒙的预训练模型，我个人感觉这个模型的质量已经挺好了。因为这个整合包主要基于weiui操作，为了能在我们自己的python环境中使用，需要对包里面的inference_webui.py进行修改。
+
+　　将[inference_maple0306fix.py](https://github.com/jmaple12/speech_to_speech/blob/main/LargeModel/Speech_Synthesis/GPT_Sovits/inference_maple0306fix.py)放在[GPT_Sovits](https://github.com/jmaple12/speech_to_speech/tree/main/LargeModel/Speech_Synthesis/GPT_Sovits)下面，使用时直接调用里面的handle函数即可。
   
-　　In order to use its inference model, we need to place the Integration package under the [GPT_Sovits](https://github.com/jmaple12/speech_to_speech/tree/main/LargeModel/Speech_Synthesis/GPT_Sovits) and place the [inference_maple0306fix.py](https://github.com/jmaple12/speech_to_speech/blob/main/LargeModel/Speech_Synthesis/GPT_Sovits/inference_maple0306fix.py) into the Integration package folder which contains **inference_webui.py** , and use its **handle** function.        
+　　此外，[gpt_sovits_api.ipynb](https://github.com/jmaple12/speech_to_speech/blob/main/LargeModel/Speech_Synthesis/GPT_Sovits/gpt_sovits_api.ipynb)给出了两种文本转语音的推理方式。第一种就是调用前面所说的handle函数，优点是参数都可以自定义，但是需要先在自己的python中配置inference_maple0306fix.py所需的扩展包。第二种只需要将[api.bat](https://github.com/jmaple12/speech_to_speech/blob/main/LargeModel/Speech_Synthesis/GPT_Sovits/api.bat)放入整合包根目录，双击打开即可使用，缺点就是模型推理所需要的模型需要在整合包的config.py中修改。   
 
-　　Besides, [gpt_sovits_api.ipynb](https://github.com/jmaple12/speech_to_speech/blob/main/LargeModel/Speech_Synthesis/GPT_Sovits/gpt_sovits_api.ipynb) gives two ways to inference, and second way can directly use its inference section without downloading python module to yourself environment, it only need to run the api.py in cmd before excute the code, and api may cause more time delay.  
-  
-　　Notice：GPT_Sovits has its own environment, if we use the first way in  [gpt_sovits_api.ipynb](https://github.com/jmaple12/speech_to_speech/blob/main/LargeModel/Speech_Synthesis/GPT_Sovits/gpt_sovits_api.ipynb)  or [combine.ipynb](https://github.com/jmaple12/speech_to_speech/blob/main/LargeModel/Combine/combine.ipynb) we need to install some package into ourself environment like package: cn2an, pypinyin, jieba_fast, pyopenjtalk, g2p_en, ffmpeg-python and so on.
+　　注意：GPT_Sovits整合包里面内置python环境，如果我们使用[gpt_sovits_api.ipynb](https://github.com/jmaple12/speech_to_speech/blob/main/LargeModel/Speech_Synthesis/GPT_Sovits/gpt_sovits_api.ipynb)的第一种方法或者使用[combine.ipynb](https://github.com/jmaple12/speech_to_speech/blob/main/LargeModel/Combine/combine.ipynb)，我们需要安装python扩展包如cn2an, pypinyin, jieba_fast, pyopenjtalk, g2p_en, ffmpeg-python等。
 
-## Final 
+## 结尾
 
-　　open [combine.ipynb](https://github.com/jmaple12/speech_to_speech/blob/main/LargeModel/Combine/combine.ipynb), download some python package, modify variables in the third bloack 
+　　打开[combine.ipynb](https://github.com/jmaple12/speech_to_speech/blob/main/LargeModel/Combine/combine.ipynb), 根据实际情况修改第三个代码块里的一些变量值
 ```
 model_size, download_root, model_path, text_text_model
 ```
-and variables in fourth block 
+及第四个代码块的一些变量值
   ```
 ref_wav_path, prompt_text, prompt_language, text, text_language, sovits_path, gpt_path
 ```
-according to your condition.
 
-## Summarize
+## 总结
 
-　　I mainly make a framework which suture several AI model to achieve speech to speech, and I focus on the localization model. Because this issue need to run at least 2 AI model at the same time, it requires large GPU video memory, and it will be worse than the speech conversation AI model. My GPU only has 4G video memory, so I only run the framework in a low level, fast_whisper can't translate my voice well and the gpt_sovits slowly deal with a sentense per 3 seconds. if you have higher computer congifure, you can try to use larger fast_whisper and Gemma  model or other outstanding AI model.  
-  
-　　of course, we can also place api of internet AI model in this framework, it may achieve much better performance may cause more time delay. I find Ernie Bot app has speech conversation function, and it is good.    
-  
-　　I hope an AI loudspeaker box which can communicate with human fluently and intelligently as it is a man appear in 5 years, I really need them.
+　　我主要做了一个缝合各个大模型实现语音对话的大框架，同时我主要关注的是本地实现语音对话。由于这个项目需要至少同时运行两种不同的语言模型，因此它对GPU的要求比较高，如果有直接能实现语音对话的AI模型，这个项目就差太多了。我的电脑只有4G的显存，运行这个项目捉襟见肘，因此我基本上都是运行最小尺寸的模型，对于更好的设备，可以考虑使用更大尺寸的模型。目前不足的地方有ASR这一块语音识别的不够准或者不够快，然后gpt_sovits进行TTS的延时差不多有3秒，太慢了。
 
+　　当然，未来也可以考虑将各个本地大模型使用线上模型的API代替，这样应该可以快很多，而且生成的文本和语音也会好很多。然后最近我发现文心一言手机APP可以进行语音对话，希望它能更好。
+
+　　我希望未来5年内市场上能有一款足够智能的音响，它能像人一样流畅地智能地与人聊天，未来我肯定很需要它！
 
     
