@@ -1,0 +1,572 @@
+Active code page: 65001
+
+E:\LargeModel\Gradio_Python\webui>python.exe py_file\lauch_gradio.py
+模拟CMD运行时cache存放的初始路径为E:/LargeModel/Gradio_Python/webui/cache/
+model.py中rc path的位置E:\LargeModel\Gradio_Python\webui\cache
+load_model.py从C:\Users\maple\AppData\Local\Programs\Ollama\ollama app.exe启动ollama app.exe
+读取asr_api的文件路径为"E:\LargeModel\Gradio_Python\webui\cache\sherpa_onnx_speech_recognizier_copy.bat"
+读取tts_api默认文件位置
+模拟CMD运行时cache存放的初始路径为E:/LargeModel/Gradio_Python/webui/cache/
+进程16464已经关闭
+ollama相关的进程已关闭
+未发现目标程序ollama_llama_server.exe对应的进程
+未输入PID，跳过执行关闭进程的程序
+ollama_llama_server相关的进程已关闭
+进程3464已经关闭
+ollama app相关的进程已关闭
+TTS参数初始化，默认必要参数为： {'model_path': {'gpt_path': '"E:\\LargeModel\\Speech_Synthesis\\GPT_SOVITS_0训练集\\自己的模型\\姬如千泷\\训练集_denoise\\yueer_denoise-e25.ckpt"', 'sovits_path': '"E:\\LargeModel\\Speech_Synthesis\\GPT_SOVITS_0训练集\\自己的模型\\姬如千泷\\训练集_denoise\\yueer_denoise_e25_s575.pth"'}, 'params': {'ref_audio_path': '"E:\\LargeModel\\Speech_Synthesis\\GPT_SOVITS_0训练集\\自己的模型\\姬如千泷\\训练集_denoise\\这是一个传承了千年尊贵的名字。.wav"', 'prompt_text': '这是一个传承了千年尊贵的名字。', 'batch_size': 2, 'prompt_lang': 'zh', 'text_lang': 'zh', 'seed': 42, 'text_split_method': 'cut5', 'speed_factor': 1.5}}
+Running on local URL:  http://127.0.0.1:7860
+
+To create a public link, set `share=True` in `launch()`.
+saved params display: qwen0.5B
+D:\Anaconda\lib\site-packages\gradio\components\dropdown.py:179: UserWarning: The value passed into gr.Dropdown() is not in the list of choices. Please update the list of choices to include: qwen:0.5b-chat or set allow_custom_value=True.
+  warnings.warn(
+model_loader saved {'model': 'qwen:0.5b-chat', 'model_loader': 'ollama\n', 'cut_params': {'max_epoch': 82, 'cut_nepoch': 27}, 'params': {'ollama': {'num_predict': 11, 'temperature': 0.8, 'top_p': 0.9, 'top_k': 40, 'num_ctx': 11, 'repeat_penalty': 1.1, 'seed': 4242, 'num_gpu': -1, 'stop': 'AI assistant:'}}, 'promot_text': ''}
+
+Model params update
+check_init_params:
+ params:{'num_predict': 2048, 'num_ctx': 2048, 'stop': ['AI assistant:'], 'temperature': 0.8, 'top_p': 0.9, 'top_k': 40, 'repeat_penalty': 1.1, 'seed': 4242},
+cut_params:{'max_epoch': 82, 'cut_nepoch': 27},
+model:qwen:0.5b-chat,
+model_loader:ollama,
+promot_text:
+
+Model params update
+check_init_params:
+ params:{'num_predict': 2048, 'num_ctx': 2048, 'stop': ['AI assistant:'], 'temperature': 0.8, 'top_p': 0.9, 'top_k': 40, 'repeat_penalty': 1.1, 'seed': 4242},
+cut_params:{'max_epoch': 82, 'cut_nepoch': 27},
+model:qwen:0.5b-chat,
+model_loader:ollama,
+promot_text:
+
+Model params update
+check_init_params:
+ params:{'num_predict': 2048, 'num_ctx': 2048, 'stop': ['AI assistant:'], 'temperature': 0.8, 'top_p': 0.9, 'top_k': 40, 'repeat_penalty': 1.1, 'seed': 4242},
+cut_params:{'max_epoch': 82, 'cut_nepoch': 27},
+model:qwen:0.5b-chat,
+model_loader:ollama,
+promot_text:
+saved params display: qwen4B
+
+Model params update
+check_init_params:
+ params:{'num_predict': 2048, 'num_ctx': 2048, 'stop': ['AI assistant:'], 'temperature': 0.8, 'top_p': 0.9, 'top_k': 40, 'repeat_penalty': 1.1, 'seed': 4242},
+cut_params:{'max_epoch': 43, 'cut_nepoch': 14},
+model:qwen:4b-chat-v1.5-q6_K,
+model_loader:ollama,
+promot_text:
+
+Model params update
+check_init_params:
+ params:{'num_predict': 2048, 'num_ctx': 2048, 'stop': ['AI assistant:'], 'temperature': 0.8, 'top_p': 0.9, 'top_k': 40, 'repeat_penalty': 1.1, 'seed': 4242},
+cut_params:{'max_epoch': 43, 'cut_nepoch': 14},
+model:qwen:4b-chat-v1.5-q6_K,
+model_loader:ollama,
+promot_text:
+未找到进程的PID
+尝试寻找端口9880的所有进程
+端口9880无进程
+开始运行E:\LargeModel\Speech_Synthesis\GPT_Sovits\GPT-SoVITS-beta\GPT-SoVITS-beta_fast_inference_0316\api_v2_maple.bat.....批处理文件
+use_tts: True
+TTS.py：tts endure_sentence更改为2
+TTS API has launched
+TTS.py更新gpt_path为:E:\LargeModel\Speech_Synthesis\GPT_SOVITS_0训练集\自己的模型\姬如千泷\训练集_denoise\yueer_denoise-e25.ckpt
+TTS.py更新sovits_path为:E:\LargeModel\Speech_Synthesis\GPT_SOVITS_0训练集\自己的模型\姬如千泷\训练集_denoise\yueer_denoise_e25_s575.pth
+TTS.py:更新tts_params为： {'ref_audio_path': 'E:\\LargeModel\\Speech_Synthesis\\GPT_SOVITS_0 训练集\\自己的模型\\姬如千泷\\训练集_denoise\\这是一个传承了千年尊贵的名字。.wav', 'prompt_text': '这是一个传承了千年尊贵的名字。', 'prompt_lang': 'zh', 'text_lang': 'zh', 'seed': 42, 'text_split_method': 'cut5', 'batch_size': 2, 'speed_factor': 1.5, 'streaming_mode': True}
+TTS.py：tts endure_sentence更改为4
+TTS.py：tts endure_sentence更改为3
+refresh_chat_end_flag 0
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '']], 'chat_end_flag': 0}
+refresh_chat_end_flag 0
+TTS.py：传入tts_text的history: [['你好', '']] num: 0 have_read_length 0
+temp_tts_flag:temp_tts 1
+temp_tts_flag:chatbot, 1
+history: [['你好', '']]
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好']], 'chat_end_flag': 0}
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！']], 'chat_end_flag': 0}
+TTS.py：传入tts_text的history: [['你好', '你好！']] num: 0 have_read_length 0
+TTS.py：tts.tts_text目前待读入的文字：， 你好！
+
+TTS.py：tts.tts_text切分后的列表：， ['你好！'] num: 0 have_read_length: 0 history的长度 3
+
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴']], 'chat_end_flag': 0}
+temp_tts_flag:chatbot, 1
+temp_tts_flag:temp_tts 0
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能']], 'chat_end_flag': 0}
+temp_tts_flag:temp_tts 1
+TTS.py：传入tts_text的history: [['你好', '你好！很高兴能']] num: 0 have_read_length 0
+TTS.py：tts.tts_text目前待读入的文字：， 你好！很高兴能
+
+TTS.py：tts.tts_text切分后的列表：， ['你好！', '很高兴能'] num: 0 have_read_length: 0 history的长度 7
+
+temp_tts_flag:temp_tts 0
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你']], 'chat_end_flag': 0}
+temp_tts_flag:chatbot, 1
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供']], 'chat_end_flag': 0}
+temp_tts_flag:temp_tts 1
+TTS.py：传入tts_text的history: [['你好', '你好！很高兴能为你']] num: 0 have_read_length 0
+TTS.py：tts.tts_text目前待读入的文字：， 你好！很高兴能为你
+
+TTS.py：tts.tts_text切分后的列表：， ['你好！', '很高兴能为你'] num: 0 have_read_length: 0 history的长度 9
+
+temp_tts_flag:temp_tts 0
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助']], 'chat_end_flag': 0}
+temp_tts_flag:chatbot, 1
+TTS.py：传入tts_text的history: [['你好', '你好！很高兴能为你提供帮助']] num: 0 have_read_length 0
+TTS.py：tts.tts_text目前待读入的文字：， 你好！很高兴能为你提供帮助
+
+TTS.py：tts.tts_text切分后的列表：， ['你好！', '很高兴能为你提供帮助'] num: 0 have_read_length: 0 history的长度 13
+
+temp_tts_flag:chatbot, 1
+temp_tts_flag:temp_tts 1
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。']], 'chat_end_flag': 0}
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你']], 'chat_end_flag': 0}
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何']], 'chat_end_flag': 0}
+TTS.py：传入tts_text的history: [['你好', '你好！很高兴能为你提供帮助。如果你']] num: 0 have_read_length 0
+TTS.py：tts.tts_text目前待读入的文字：， 你好！很高兴能为你提供帮助。如果你
+
+TTS.py：tts.tts_text切分后的列表：， ['你好！', '很高兴能为你提供帮助。', '如果你'] num: 0 have_read_length: 0 history的长度 17
+
+temp_tts_flag:temp_tts 0
+temp_tts_flag:chatbot, 1
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题']], 'chat_end_flag': 0}
+TTS.py：传入tts_text的history: [['你好', '你好！很高兴能为你提供帮助。如果你有任何']] num: 0 have_read_length 0
+TTS.py：tts.tts_text目前待读入的文字：， 你好！很高兴能为你提供帮助。如果你有任何
+
+TTS.py：tts.tts_text切分后的列表：， ['你好！', '很高兴能为你提供帮助。', '如果你有任何'] num: 0 have_read_length: 0 history的长度 20
+
+temp_tts_flag:chatbot, 1
+temp_tts_flag:temp_tts 1
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或']], 'chat_end_flag': 0}
+TTS.py：传入tts_text的history: [['你好', '你好！很高兴能为你提供帮助。如果你有任何问题']] num: 0 have_read_length 0
+TTS.py：tts.tts_text目前待读入的文字：， 你好！很高兴能为你提供帮助。如果你有任何问题
+
+TTS.py：tts.tts_text切分后的列表：， ['你好！', '很高兴能为你提供帮助。', '如果你有任何问题'] num: 0 have_read_length: 0 history的长度 22
+
+temp_tts_flag:temp_tts 0
+temp_tts_flag:chatbot, 1
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要']], 'chat_end_flag': 0}
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息']], 'chat_end_flag': 0}
+temp_tts_flag:temp_tts 1
+TTS.py：传入tts_text的history: [['你好', '你好！很高兴能为你提供帮助。如果你有任何问题或']] num: 0 have_read_length 0
+TTS.py：tts.tts_text目前待读入的文字：， 你好！很高兴能为你提供帮助。如果你有任何问题或
+
+TTS.py：tts.tts_text切分后的列表：， ['你好！', '很高兴能为你提供帮助。', '如果你有任何问题或'] num: 0 have_read_length: 0 history的长度 23
+
+temp_tts_flag:temp_tts 0
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息']], 'chat_end_flag': 0}
+temp_tts_flag:chatbot, 1
+temp_tts_flag:temp_tts 1
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请']], 'chat_end_flag': 0}
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时']], 'chat_end_flag': 0}
+temp_tts_flag:temp_tts 0
+TTS.py：传入tts_text的history: [['你好', '你好！很高兴能为你提供帮助。如果你有任何问题或需要 任何信息，请']] num: 0 have_read_length 0
+TTS.py：tts.tts_text目前待读入的文字：， 你好！很高兴能为你提供帮助。如果你有任何问题或需要任何信息，请
+
+TTS.py：tts.tts_text切分后的列表：， ['你好！', '很高兴能为你提供帮助。', '如果你有任何问题或需要任何信息，', '请'] num: 0 have_read_length: 0 history的长度 31
+
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我']], 'chat_end_flag': 0}
+temp_tts_flag:chatbot, 1
+TTS.py：传入tts_text的history: [['你好', '你好！很高兴能为你提供帮助。如果你有任何问题或需要 任何信息，请随时告诉我']] num: 0 have_read_length 0
+TTS.py：tts.tts_text目前待读入的文字：， 你好！很高兴能为你提供帮助。如果你有任何问题或需要任何信息，请随时告诉我
+
+TTS.py：tts.tts_text切分后的列表：， ['你好！', '很高兴能为你提供帮助。', '如果你有任何问题或需要任何信息，', '请随时告诉我'] num: 0 have_read_length: 0 history的长度 36
+
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。']], 'chat_end_flag': 0}
+temp_tts_flag:chatbot, 1
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会']], 'chat_end_flag': 0}
+temp_tts_flag:temp_tts 1
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力']], 'chat_end_flag': 0}
+temp_tts_flag:temp_tts 0
+TTS.py：传入tts_text的history: [['你好', '你好！很高兴能为你提供帮助。如果你有任何问题或需要 任何信息，请随时告诉我。我会']] num: 0 have_read_length 0
+TTS.py：tts.tts_text目前待读入的文字：， 你好！很高兴能为你提供帮助。如果你有任何问题或需要任何信息，请随时告诉我。我会
+
+TTS.py：tts.tts_text切分后的列表：， ['你好！', '很高兴能为你提供帮助。', '如果你有任何问题或需要任何信息，', '请随时告诉我。', '我会'] num: 0 have_read_length: 0 history的长度 39
+
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供']], 'chat_end_flag': 0}
+temp_tts_flag:temp_tts 1
+temp_tts_flag:chatbot, 1
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持']], 'chat_end_flag': 0}
+temp_tts_flag:temp_tts 0
+TTS.py：传入tts_text的history: [['你好', '你好！很高兴能为你提供帮助。如果你有任何问题或需要 任何信息，请随时告诉我。我会尽力提供']] num: 0 have_read_length 0
+TTS.py：tts.tts_text目前待读入的文字：， 你好！很高兴能为你提供帮助。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供
+
+TTS.py：tts.tts_text切分后的列表：， ['你好！', '很高兴能为你提供帮助。', '如果你有任何问题或需要任何信息，', '请随时告诉我。', '我会尽力提供'] num: 0 have_read_length: 0 history的长度 43
+
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和']], 'chat_end_flag': 0}
+temp_tts_flag:chatbot, 1
+TTS.py：传入tts_text的history: [['你好', '你好！很高兴能为你提供帮助。如果你有任何问题或需要 任何信息，请随时告诉我。我会尽力提供支持']] num: 0 have_read_length 0
+TTS.py：tts.tts_text目前待读入的文字：， 你好！很高兴能为你提供帮助。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持
+
+TTS.py：tts.tts_text切分后的列表：， ['你好！', '很高兴能为你提供帮助。', '如果你有任何问题或需要任何信息，', '请随时告诉我。', '我会尽力提供支持'] num: 0 have_read_length: 0 history的长度 45
+
+temp_tts_flag:chatbot, 1
+temp_tts_flag:temp_tts 1
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答']], 'chat_end_flag': 0}
+TTS.py：传入tts_text的history: [['你好', '你好！很高兴能为你提供帮助。如果你有任何问题或需要 任何信息，请随时告诉我。我会尽力提供支持和']] num: 0 have_read_length 0
+TTS.py：tts.tts_text目前待读入的文字：， 你好！很高兴能为你提供帮助。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和
+
+TTS.py：tts.tts_text切分后的列表：， ['你好！', '很高兴能为你提供帮助。', '如果你有任何问题或需要任何信息，', '请随时告诉我。', '我会尽力提供支持和'] num: 0 have_read_length: 0 history的长度 46
+
+temp_tts_flag:temp_tts 0
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。']], 'chat_end_flag': 0}
+temp_tts_flag:chatbot, 1
+temp_tts_flag:temp_tts 1
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢']], 'chat_end_flag': 0}
+TTS.py：传入tts_text的history: [['你好', '你好！很高兴能为你提供帮助。如果你有任何问题或需要 任何信息，请随时告诉我。我会尽力提供支持和解答疑问。']] num: 0 have_read_length 0
+TTS.py：tts.tts_text目前待读入的文字：， 你好！很高兴能为你提供帮助。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。
+
+TTS.py：tts.tts_text切分后的列表：， ['你好！', '很高兴能为你提供帮助。', '如果你有任何问题或需要任何信息，', '请随时告诉我。', '我会尽力提供支持和解答疑问。'] num: 0 have_read_length: 0 history的长度 51
+
+TTS.py：tts.tts_text待读入文本末尾是标点符号且文本长度大于endure_sentence<或者num=1且文本长度非0，进入语音转写的循环
+TTS.py：tts.tts_text截止到下一步要读取的总长度30
+TTS.py：tts.run正在读取： 你好！很高兴能为你提供帮助。如果你有任何问题或需要任何信息，
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的']], 'chat_end_flag': 0}
+temp_tts_flag:temp_tts 0
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的']], 'chat_end_flag': 0}
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问']], 'chat_end_flag': 0}
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！']], 'chat_end_flag': 0}
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝']], 'chat_end_flag': 0}
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你']], 'chat_end_flag': 0}
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利']], 'chat_end_flag': 0}
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利']], 'chat_end_flag': 0}
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！']], 'chat_end_flag': 0}
+因为chat_end_flag的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提 供帮助。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询 问！祝你一切顺利！']], 'chat_end_flag': 1}
+temp_tts_flag:chat_end_flag 0
+TTS.py：tts.tts_text文字“你好！很高兴能为你提供帮助。如果你有任何问题或需要任何信息，”读取完 成后的text_list: ['请随时告诉我。', '我会尽力提供支持和解答疑问。']
+目前已经读入的文字长度：30
+temp_tts_flag:chatbot, 1
+temp_tts_flag:temp_tts 1
+TTS.py：传入tts_text的history: [['你好', '你好！很高兴能为你提供帮助。如果你有任何问题或需要 任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝你一切顺利！']] num: 1 have_read_length 30
+TTS.py：tts.tts_text目前待读入的文字：， 请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝你一切顺利！
+
+TTS.py：tts.tts_text切分后的列表：， ['请随时告诉我。', '我会尽力提供支持和解答疑问。', '谢谢你的询问！', '祝你一切顺利！'] num: 1 have_read_length: 30 history的长度 65
+
+TTS.py：tts.tts_text待读入文本末尾是标点符号且文本长度大于endure_sentence<或者num=1且文本长度非0，进入语音转写的循环
+TTS.py：tts.tts_text截止到下一步要读取的总长度65
+TTS.py：tts.run正在读取： 请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝你一切顺 利！
+TTS.py：tts.tts_text文字“请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝你一切顺利！”读取完成后的text_list: []
+目前已经读入的文字长度：65
+refresh_chat_end_flag 65
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '']], 'chat_end_flag': 1}
+Exception in callback _ProactorBasePipeTransport._call_connection_lost(None)
+handle: <Handle _ProactorBasePipeTransport._call_connection_lost(None)>
+Traceback (most recent call last):
+  File "D:\Anaconda\lib\asyncio\events.py", line 81, in _run
+    self._context.run(self._callback, *self._args)
+  File "D:\Anaconda\lib\asyncio\proactor_events.py", line 162, in _call_connection_lost
+    self._sock.shutdown(socket.SHUT_RDWR)
+ConnectionResetError: [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+refresh_chat_end_flag 0
+因为chat_end_flag的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提 供帮助。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询 问！祝你一切顺利！'], ['你帮我列举一下几种排序算法', '']], 'chat_end_flag': 0}
+TTS.py：传入tts_text的history: [['你好', '你好！很高兴能为你提供帮助。如果你有任何问题或需要 任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝你一切顺利！'], ['你帮我 列举一下几种排序算法', '']] num: 1 have_read_length 0
+temp_tts_flag:chatbot, 1
+temp_tts_flag:temp_tts 0
+temp_tts_flag:temp_tts 1
+history: [['你好', '你好！很高兴能为你提供帮助。如果你有任何问题或需要任何信息，请随时告诉我 。我会尽力提供支持和解答疑问。谢谢你的询问！祝你一切顺利！'], ['你帮我列举一下几种排序算法', '']]
+temp_tts_flag:temp_tts 0
+temp_tts_flag:chat_end_flag 0
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然']], 'chat_end_flag': 0}
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以']], 'chat_end_flag': 0}
+TTS.py：传入tts_text的history: [['你好', '你好！很高兴能为你提供帮助。如果你有任何问题或需要 任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝你一切顺利！'], ['你帮我 列举一下几种排序算法', '当然可以']] num: 0 have_read_length 0
+TTS.py：tts.tts_text目前待读入的文字：， 当然可以
+
+TTS.py：tts.tts_text切分后的列表：， ['当然可以'] num: 0 have_read_length: 0 history的长度 4
+
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，']], 'chat_end_flag': 0}
+temp_tts_flag:chatbot, 1
+temp_tts_flag:temp_tts 1
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，以下']], 'chat_end_flag': 0}
+TTS.py：传入tts_text的history: [['你好', '你好！很高兴能为你提供帮助。如果你有任何问题或需要 任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝你一切顺利！'], ['你帮我 列举一下几种排序算法', '当然可以，以下']] num: 0 have_read_length 0
+TTS.py：tts.tts_text目前待读入的文字：， 当然可以，以下
+
+TTS.py：tts.tts_text切分后的列表：， ['当然可以，', '以下'] num: 0 have_read_length: 0 history的长度 7
+
+temp_tts_flag:temp_tts 0
+temp_tts_flag:chatbot, 1
+temp_tts_flag:temp_tts 1
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，以下是一']], 'chat_end_flag': 0}
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，以下是一些']], 'chat_end_flag': 0}
+TTS.py：传入tts_text的history: [['你好', '你好！很高兴能为你提供帮助。如果你有任何问题或需要 任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝你一切顺利！'], ['你帮我 列举一下几种排序算法', '当然可以，以下是一']] num: 0 have_read_length 0
+TTS.py：tts.tts_text目前待读入的文字：， 当然可以，以下是一
+
+TTS.py：tts.tts_text切分后的列表：， ['当然可以，', '以下是一'] num: 0 have_read_length: 0 history的长度 9
+
+temp_tts_flag:temp_tts 0
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，以下是一些常见的']], 'chat_end_flag': 0}
+temp_tts_flag:chatbot, 1
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，以下是一些常见的排序']], 'chat_end_flag': 0}
+TTS.py：传入tts_text的history: [['你好', '你好！很高兴能为你提供帮助。如果你有任何问题或需要 任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝你一切顺利！'], ['你帮我 列举一下几种排序算法', '当然可以，以下是一些常见的']] num: 0 have_read_length 0
+TTS.py：tts.tts_text目前待读入的文字：， 当然可以，以下是一些常见的
+
+TTS.py：tts.tts_text切分后的列表：， ['当然可以，', '以下是一些常见的'] num: 0 have_read_length: 0 history的长度 13
+
+temp_tts_flag:chatbot, 1
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，以下是一些常见的排序算法']], 'chat_end_flag': 0}
+temp_tts_flag:temp_tts 1
+TTS.py：传入tts_text的history: [['你好', '你好！很高兴能为你提供帮助。如果你有任何问题或需要 任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝你一切顺利！'], ['你帮我 列举一下几种排序算法', '当然可以，以下是一些常见的排序']] num: 0 have_read_length 0
+TTS.py：tts.tts_text目前待读入的文字：， 当然可以，以下是一些常见的排序
+
+TTS.py：tts.tts_text切分后的列表：， ['当然可以，', '以下是一些常见的排序'] num: 0 have_read_length: 0 history的长度 15
+
+temp_tts_flag:temp_tts 0
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：']], 'chat_end_flag': 0}
+temp_tts_flag:chatbot, 1
+TTS.py：传入tts_text的history: [['你好', '你好！很高兴能为你提供帮助。如果你有任何问题或需要 任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝你一切顺利！'], ['你帮我 列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：']] num: 0 have_read_length 0
+TTS.py：tts.tts_text目前待读入的文字：， 当然可以，以下是一些常见的排序算法：
+
+TTS.py：tts.tts_text切分后的列表：， ['当然可以，', '以下是一些常见的排序算法：'] num: 0 have_read_length: 0 history的长度 18
+
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1']], 'chat_end_flag': 0}
+temp_tts_flag:chatbot, 1
+temp_tts_flag:temp_tts 1
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1.']], 'chat_end_flag': 0}
+TTS.py：传入tts_text的history: [['你好', '你好！很高兴能为你提供帮助。如果你有任何问题或需要 任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝你一切顺利！'], ['你帮我 列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1']] num: 0 have_read_length 0
+TTS.py：tts.tts_text目前待读入的文字：， 当然可以，以下是一些常见的排序算法：
+1
+
+TTS.py：tts.tts_text切分后的列表：， ['当然可以，', '以下是一些常见的排序算法：\n', '1'] num: 0 have_read_length: 0 history的长度 20
+
+temp_tts_flag:chatbot, 1
+temp_tts_flag:temp_tts 0
+temp_tts_flag:temp_tts 1
+TTS.py：传入tts_text的history: [['你好', '你好！很高兴能为你提供帮助。如果你有任何问题或需要 任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝你一切顺利！'], ['你帮我 列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1.']] num: 0 have_read_length 0
+TTS.py：tts.tts_text目前待读入的文字：， 当然可以，以下是一些常见的排序算法：
+1.
+
+TTS.py：tts.tts_text切分后的列表：， ['当然可以，', '以下是一些常见的排序算法：\n', '1.'] num: 0 have_read_length: 0 history的长度 21
+
+TTS.py：tts.tts_text待读入文本末尾是标点符号且文本长度大于endure_sentence<或者num=1且文本长度非0，进入语音转写的循环
+TTS.py：tts.tts_text截止到下一步要读取的总长度21
+TTS.py：tts.run正在读取： 当然可以，以下是一些常见的排序算法：
+1.
+temp_tts_flag:temp_tts 0
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1. 冒']], 'chat_end_flag': 0}
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1. 冒泡']], 'chat_end_flag': 0}
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1. 冒泡排序']], 'chat_end_flag': 0}
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1. 冒泡排序：']], 'chat_end_flag': 0}
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1. 冒泡排序：这是一种简单']], 'chat_end_flag': 0}
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1. 冒泡排序：这是一种简单直观']], 'chat_end_flag': 0}
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1. 冒泡排序：这是一种简单直观的']], 'chat_end_flag': 0}
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1. 冒泡排序：这是一种简单直观的排序']], 'chat_end_flag': 0}
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1. 冒泡排序：这是一种简单直观的排序方法']], 'chat_end_flag': 0}
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1. 冒泡排序：这是一种简单直观的排序方法，']], 'chat_end_flag': 0}
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1. 冒泡排序：这是一种简单直观的排序方法，它']], 'chat_end_flag': 0}
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1. 冒泡排序：这是一种简单直观的排序方法，它通过']], 'chat_end_flag': 0}
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1. 冒泡排序：这是一种简单直观的排序方法，它通过比较']], 'chat_end_flag': 0}
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1. 冒泡排序：这是一种简单直观的排序方法，它通过比较相邻']], 'chat_end_flag': 0}
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1. 冒泡排序：这是一种简单直观的排序方法，它通过比较相邻的']], 'chat_end_flag': 0}
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1. 冒泡排序：这是一种简单直观的排序方法，它通过比较相邻的元素']], 'chat_end_flag': 0}
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1. 冒泡排序：这是一种简单直观的排序方法，它通过比较相邻的元素并']], 'chat_end_flag': 0}
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1. 冒泡排序：这是一种简单直观的排序方法，它通过比较相邻的元素并按照']], 'chat_end_flag': 0}
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1. 冒泡排序：这是一种简单直观的排序方法，它通过比较相邻的元素并按照顺序']], 'chat_end_flag': 0}
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1. 冒泡排序：这是一种简单直观的排序方法，它通过比较相邻的元素并按照顺序交换']], 'chat_end_flag': 0}
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1. 冒泡排序：这是一种简单直观的排序方法，它通过比较相邻的元素并按照顺序交换它们']], 'chat_end_flag': 0}
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1. 冒泡排序：这是一种简单直观的排序方法，它通过比较相邻的元素并按照顺序交换它们的位置']], 'chat_end_flag': 0}
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1. 冒泡排序：这是一种简单直观的排序方法，它通过比较相邻的元素并按照顺序交换它们的位置，']], 'chat_end_flag': 0}
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1. 冒泡排序：这是一种简单直观的排序方法，它通过比较相邻的元素并按照顺序交换它们的位置，从而']], 'chat_end_flag': 0}
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1. 冒泡排序：这是一种简单直观的排序方法，它通过比较相邻的元素并按照顺序交换它们的位置，从而实现']], 'chat_end_flag': 0}
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1. 冒泡排序：这是一种简单直观的排序方法，它通过比较相邻的元素并按照顺序交换它们的位置，从而实现排序']], 'chat_end_flag': 0}
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1. 冒泡排序：这是一种简单直观的排序方法，它通过比较相邻的元素并按照顺序交换它们的位置，从而实现排序 的目的']], 'chat_end_flag': 0}
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1. 冒泡排序：这是一种简单直观的排序方法，它通过比较相邻的元素并按照顺序交换它们的位置，从而实现排序 的目的。']], 'chat_end_flag': 0}
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1. 冒泡排序：这是一种简单直观的排序方法，它通过比较相邻的元素并按照顺序交换它们的位置，从而实现排序 的目的。\n2']], 'chat_end_flag': 0}
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1. 冒泡排序：这是一种简单直观的排序方法，它通过比较相邻的元素并按照顺序交换它们的位置，从而实现排序 的目的。\n2.']], 'chat_end_flag': 0}
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1. 冒泡排序：这是一种简单直观的排序方法，它通过比较相邻的元素并按照顺序交换它们的位置，从而实现排序 的目的。\n2. 插']], 'chat_end_flag': 0}
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1. 冒泡排序：这是一种简单直观的排序方法，它通过比较相邻的元素并按照顺序交换它们的位置，从而实现排序 的目的。\n2. 插入']], 'chat_end_flag': 0}
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1. 冒泡排序：这是一种简单直观的排序方法，它通过比较相邻的元素并按照顺序交换它们的位置，从而实现排序 的目的。\n2. 插入排序']], 'chat_end_flag': 0}
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1. 冒泡排序：这是一种简单直观的排序方法，它通过比较相邻的元素并按照顺序交换它们的位置，从而实现排序 的目的。\n2. 插入排序：']], 'chat_end_flag': 0}
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1. 冒泡排序：这是一种简单直观的排序方法，它通过比较相邻的元素并按照顺序交换它们的位置，从而实现排序 的目的。\n2. 插入排序：插入']], 'chat_end_flag': 0}
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1. 冒泡排序：这是一种简单直观的排序方法，它通过比较相邻的元素并按照顺序交换它们的位置，从而实现排序 的目的。\n2. 插入排序：插入排序']], 'chat_end_flag': 0}
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1. 冒泡排序：这是一种简单直观的排序方法，它通过比较相邻的元素并按照顺序交换它们的位置，从而实现排序 的目的。\n2. 插入排序：插入排序是一种']], 'chat_end_flag': 0}
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1. 冒泡排序：这是一种简单直观的排序方法，它通过比较相邻的元素并按照顺序交换它们的位置，从而实现排序 的目的。\n2. 插入排序：插入排序是一种简单']], 'chat_end_flag': 0}
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1. 冒泡排序：这是一种简单直观的排序方法，它通过比较相邻的元素并按照顺序交换它们的位置，从而实现排序 的目的。\n2. 插入排序：插入排序是一种简单直观的']], 'chat_end_flag': 0}
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1. 冒泡排序：这是一种简单直观的排序方法，它通过比较相邻的元素并按照顺序交换它们的位置，从而实现排序 的目的。\n2. 插入排序：插入排序是一种简单直观的']], 'chat_end_flag': 0}
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1. 冒泡排序：这是一种简单直观的排序方法，它通过比较相邻的元素并按照顺序交换它们的位置，从而实现排序 的目的。\n2. 插入排序：插入排序是一种简单直观的排序']], 'chat_end_flag': 0}
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1. 冒泡排序：这是一种简单直观的排序方法，它通过比较相邻的元素并按照顺序交换它们的位置，从而实现排序 的目的。\n2. 插入排序：插入排序是一种简单直观的排序方法']], 'chat_end_flag': 0}
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1. 冒泡排序：这是一种简单直观的排序方法，它通过比较相邻的元素并按照顺序交换它们的位置，从而实现排序 的目的。\n2. 插入排序：插入排序是一种简单直观的排序方法，']], 'chat_end_flag': 0}
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1. 冒泡排序：这是一种简单直观的排序方法，它通过比较相邻的元素并按照顺序交换它们的位置，从而实现排序 的目的。\n2. 插入排序：插入排序是一种简单直观的排序方法，它']], 'chat_end_flag': 0}
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1. 冒泡排序：这是一种简单直观的排序方法，它通过比较相邻的元素并按照顺序交换它们的位置，从而实现排序 的目的。\n2. 插入排序：插入排序是一种简单直观的排序方法，它通过']], 'chat_end_flag': 0}
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1. 冒泡排序：这是一种简单直观的排序方法，它通过比较相邻的元素并按照顺序交换它们的位置，从而实现排序 的目的。\n2. 插入排序：插入排序是一种简单直观的排序方法，它通过构建']], 'chat_end_flag': 0}
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1. 冒泡排序：这是一种简单直观的排序方法，它通过比较相邻的元素并按照顺序交换它们的位置，从而实现排序 的目的。\n2. 插入排序：插入排序是一种简单直观的排序方法，它通过构建有序']], 'chat_end_flag': 0}
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1. 冒泡排序：这是一种简单直观的排序方法，它通过比较相邻的元素并按照顺序交换它们的位置，从而实现排序 的目的。\n2. 插入排序：插入排序是一种简单直观的排序方法，它通过构建有序序列']], 'chat_end_flag': 0}
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1. 冒泡排序：这是一种简单直观的排序方法，它通过比较相邻的元素并按照顺序交换它们的位置，从而实现排序 的目的。\n2. 插入排序：插入排序是一种简单直观的排序方法，它通过构建有序序列来']], 'chat_end_flag': 0}
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1. 冒泡排序：这是一种简单直观的排序方法，它通过比较相邻的元素并按照顺序交换它们的位置，从而实现排序 的目的。\n2. 插入排序：插入排序是一种简单直观的排序方法，它通过构建有序序列来对']], 'chat_end_flag': 0}
+TTS.py：tts.tts_text文字“当然可以，以下是一些常见的排序算法：
+1.”读取完成后的text_list: []
+目前已经读入的文字长度：21
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1. 冒泡排序：这是一种简单直观的排序方法，它通过比较相邻的元素并按照顺序交换它们的位置，从而实现排序 的目的。\n2. 插入排序：插入排序是一种简单直观的排序方法，它通过构建有序序列来对给']], 'chat_end_flag': 0}
+temp_tts_flag:chatbot, 1
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1. 冒泡排序：这是一种简单直观的排序方法，它通过比较相邻的元素并按照顺序交换它们的位置，从而实现排序 的目的。\n2. 插入排序：插入排序是一种简单直观的排序方法，它通过构建有序序列来对给定']], 'chat_end_flag': 0}
+temp_tts_flag:temp_tts 1
+TTS.py：传入tts_text的history: [['你好', '你好！很高兴能为你提供帮助。如果你有任何问题或需要 任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝你一切顺利！'], ['你帮我 列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1. 冒泡排序：这是一种简单直观的排序方法，它通过比较相邻的元素并按照顺序交换它们的位置，从而实现排序的目的。\n2. 插入排序：插入排序是一种简单直观的排序方法，它通过构建有序序列来对给']] num: 0 have_read_length 21
+TTS.py：tts.tts_text目前待读入的文字：，  冒泡排序：这是一种简单直观的排序方法，它通过比较相 邻的元素并按照顺序交换它们的位置，从而实现排序的目的。
+2. 插入排序：插入排序是一种简单直观的排序方法，它通过构建有序序列来对给
+
+TTS.py：tts.tts_text切分后的列表：， [' 冒泡排序：这是一种简单直观的排序方法，', '它通过比较 相邻的元素并按照顺序交换它们的位置，', '从而实现排序的目的。', '\n', '2.', ' 插入排序：插入排序是一种简单直观的排序方法，', '它通过构建有序序列来对给'] num: 0 have_read_length: 21 history的长度 112
+
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1. 冒泡排序：这是一种简单直观的排序方法，它通过比较相邻的元素并按照顺序交换它们的位置，从而实现排序 的目的。\n2. 插入排序：插入排序是一种简单直观的排序方法，它通过构建有序序列来对给定的数据']], 'chat_end_flag': 0}
+temp_tts_flag:temp_tts 0
+temp_tts_flag:chatbot, 1
+TTS.py：传入tts_text的history: [['你好', '你好！很高兴能为你提供帮助。如果你有任何问题或需要 任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝你一切顺利！'], ['你帮我 列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1. 冒泡排序：这是一种简单直观的排序方法，它通过比较相邻的元素并按照顺序交换它们的位置，从而实现排序的目的。\n2. 插入排序：插入排序是一种简单直观的排序方法，它通过构建有序序列来对给定的数据']] num: 0 have_read_length 21
+TTS.py：tts.tts_text目前待读入的文字：，  冒泡排序：这是一种简单直观的排序方法，它通过比较相 邻的元素并按照顺序交换它们的位置，从而实现排序的目的。
+2. 插入排序：插入排序是一种简单直观的排序方法，它通过构建有序序列来对给定的数据
+
+TTS.py：tts.tts_text切分后的列表：， [' 冒泡排序：这是一种简单直观的排序方法，', '它通过比较 相邻的元素并按照顺序交换它们的位置，', '从而实现排序的目的。', '\n', '2.', ' 插入排序：插入排序是一种简单直观的排序方法，', '它通过构建有序序列来对给定的数据'] num: 0 have_read_length: 21 history的长度 116
+
+temp_tts_flag:temp_tts 0
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1. 冒泡排序：这是一种简单直观的排序方法，它通过比较相邻的元素并按照顺序交换它们的位置，从而实现排序 的目的。\n2. 插入排序：插入排序是一种简单直观的排序方法，它通过构建有序序列来对给定的数据进行']], 'chat_end_flag': 0}
+temp_tts_flag:chatbot, 1
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1. 冒泡排序：这是一种简单直观的排序方法，它通过比较相邻的元素并按照顺序交换它们的位置，从而实现排序 的目的。\n2. 插入排序：插入排序是一种简单直观的排序方法，它通过构建有序序列来对给定的数据进行排序']], 'chat_end_flag': 0}
+temp_tts_flag:temp_tts 1
+TTS.py：传入tts_text的history: [['你好', '你好！很高兴能为你提供帮助。如果你有任何问题或需要 任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝你一切顺利！'], ['你帮我 列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1. 冒泡排序：这是一种简单直观的排序方法，它通过比较相邻的元素并按照顺序交换它们的位置，从而实现排序的目的。\n2. 插入排序：插入排序是一种简单直观的排序方法，它通过构建有序序列来对给定的数据进行']] num: 0 have_read_length 21
+TTS.py：tts.tts_text目前待读入的文字：，  冒泡排序：这是一种简单直观的排序方法，它通过比较相 邻的元素并按照顺序交换它们的位置，从而实现排序的目的。
+2. 插入排序：插入排序是一种简单直观的排序方法，它通过构建有序序列来对给定的数据进行
+
+TTS.py：tts.tts_text切分后的列表：， [' 冒泡排序：这是一种简单直观的排序方法，', '它通过比较 相邻的元素并按照顺序交换它们的位置，', '从而实现排序的目的。', '\n', '2.', ' 插入排序：插入排序是一种简单直观的排序方法，', '它通过构建有序序列来对给定的数据进行'] num: 0 have_read_length: 21 history的长度 118
+
+temp_tts_flag:temp_tts 0
+temp_tts_flag:chatbot, 1
+temp_tts_flag:temp_tts 1
+TTS.py：传入tts_text的history: [['你好', '你好！很高兴能为你提供帮助。如果你有任何问题或需要 任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝你一切顺利！'], ['你帮我 列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1. 冒泡排序：这是一种简单直观的排序方法，它通过比较相邻的元素并按照顺序交换它们的位置，从而实现排序的目的。\n2. 插入排序：插入排序是一种简单直观的排序方法，它通过构建有序序列来对给定的数据进行排序']] num: 0 have_read_length 21
+TTS.py：tts.tts_text目前待读入的文字：，  冒泡排序：这是一种简单直观的排序方法，它通过比较相 邻的元素并按照顺序交换它们的位置，从而实现排序的目的。
+2. 插入排序：插入排序是一种简单直观的排序方法，它通过构建有序序列来对给定的数据进行排序
+
+TTS.py：tts.tts_text切分后的列表：， [' 冒泡排序：这是一种简单直观的排序方法，', '它通过比较 相邻的元素并按照顺序交换它们的位置，', '从而实现排序的目的。', '\n', '2.', ' 插入排序：插入排序是一种简单直观的排序方法，', '它通过构建有序序列来对给定的数据进行排序'] num: 0 have_read_length: 21 history的长度 120
+
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1. 冒泡排序：这是一种简单直观的排序方法，它通过比较相邻的元素并按照顺序交换它们的位置，从而实现排序 的目的。\n2. 插入排序：插入排序是一种简单直观的排序方法，它通过构建有序序列来对给定的数据进行排序的目的']], 'chat_end_flag': 0}
+temp_tts_flag:chatbot, 1
+temp_tts_flag:temp_tts 0
+temp_tts_flag:temp_tts 1
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1. 冒泡排序：这是一种简单直观的排序方法，它通过比较相邻的元素并按照顺序交换它们的位置，从而实现排序 的目的。\n2. 插入排序：插入排序是一种简单直观的排序方法，它通过构建有序序列来对给定的数据进行排序的目的。']], 'chat_end_flag': 0}
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1. 冒泡排序：这是一种简单直观的排序方法，它通过比较相邻的元素并按照顺序交换它们的位置，从而实现排序 的目的。\n2. 插入排序：插入排序是一种简单直观的排序方法，它通过构建有序序列来对给定的数据进行排序的目的。\n3']], 'chat_end_flag': 0}
+TTS.py：传入tts_text的history: [['你好', '你好！很高兴能为你提供帮助。如果你有任何问题或需要 任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝你一切顺利！'], ['你帮我 列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1. 冒泡排序：这是一种简单直观的排序方法，它通过比较相邻的元素并按照顺序交换它们的位置，从而实现排序的目的。\n2. 插入排序：插入排序是一种简单直观的排序方法，它通过构建有序序列来对给定的数据进行排序的目的。']] num: 0 have_read_length 21
+TTS.py：tts.tts_text目前待读入的文字：，  冒泡排序：这是一种简单直观的排序方法，它通过比较相 邻的元素并按照顺序交换它们的位置，从而实现排序的目的。
+2. 插入排序：插入排序是一种简单直观的排序方法，它通过构建有序序列来对给定的数据进行排序的目的。
+
+TTS.py：tts.tts_text切分后的列表：， [' 冒泡排序：这是一种简单直观的排序方法，', '它通过比较 相邻的元素并按照顺序交换它们的位置，', '从而实现排序的目的。', '\n', '2.', ' 插入排序：插入排序是一种简单直观的排序方法，', '它通过构建有序序列来对给定的数据进行排序的目的。'] num: 0 have_read_length: 21 history的长度 124
+
+TTS.py：tts.tts_text待读入文本末尾是标点符号且文本长度大于endure_sentence<或者num=1且文本长度非0，进入语音转写的循环
+TTS.py：tts.tts_text截止到下一步要读取的总长度74
+TTS.py：tts.run正在读取：  冒泡排序：这是一种简单直观的排序方法，它通过比较相邻的元素并按照顺序交换它们的位置，从而实现排序的目的。
+temp_tts_flag:temp_tts 0
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1. 冒泡排序：这是一种简单直观的排序方法，它通过比较相邻的元素并按照顺序交换它们的位置，从而实现排序 的目的。\n2. 插入排序：插入排序是一种简单直观的排序方法，它通过构建有序序列来对给定的数据进行排序的目的。\n3.']], 'chat_end_flag': 0}
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1. 冒泡排序：这是一种简单直观的排序方法，它通过比较相邻的元素并按照顺序交换它们的位置，从而实现排序 的目的。\n2. 插入排序：插入排序是一种简单直观的排序方法，它通过构建有序序列来对给定的数据进行排序的目的。\n3. 快']], 'chat_end_flag': 0}
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1. 冒泡排序：这是一种简单直观的排序方法，它通过比较相邻的元素并按照顺序交换它们的位置，从而实现排序 的目的。\n2. 插入排序：插入排序是一种简单直观的排序方法，它通过构建有序序列来对给定的数据进行排序的目的。\n3. 快速']], 'chat_end_flag': 0}
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1. 冒泡排序：这是一种简单直观的排序方法，它通过比较相邻的元素并按照顺序交换它们的位置，从而实现排序 的目的。\n2. 插入排序：插入排序是一种简单直观的排序方法，它通过构建有序序列来对给定的数据进行排序的目的。\n3. 快速排序']], 'chat_end_flag': 0}
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1. 冒泡排序：这是一种简单直观的排序方法，它通过比较相邻的元素并按照顺序交换它们的位置，从而实现排序 的目的。\n2. 插入排序：插入排序是一种简单直观的排序方法，它通过构建有序序列来对给定的数据进行排序的目的。\n3. 快速排序：']], 'chat_end_flag': 0}
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1. 冒泡排序：这是一种简单直观的排序方法，它通过比较相邻的元素并按照顺序交换它们的位置，从而实现排序 的目的。\n2. 插入排序：插入排序是一种简单直观的排序方法，它通过构建有序序列来对给定的数据进行排序的目的。\n3. 快速排序：快速']], 'chat_end_flag': 0}
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1. 冒泡排序：这是一种简单直观的排序方法，它通过比较相邻的元素并按照顺序交换它们的位置，从而实现排序 的目的。\n2. 插入排序：插入排序是一种简单直观的排序方法，它通过构建有序序列来对给定的数据进行排序的目的。\n3. 快速排序：快速排序']], 'chat_end_flag': 0}
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1. 冒泡排序：这是一种简单直观的排序方法，它通过比较相邻的元素并按照顺序交换它们的位置，从而实现排序 的目的。\n2. 插入排序：插入排序是一种简单直观的排序方法，它通过构建有序序列来对给定的数据进行排序的目的。\n3. 快速排序：快速排序是一种']], 'chat_end_flag': 0}
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1. 冒泡排序：这是一种简单直观的排序方法，它通过比较相邻的元素并按照顺序交换它们的位置，从而实现排序 的目的。\n2. 插入排序：插入排序是一种简单直观的排序方法，它通过构建有序序列来对给定的数据进行排序的目的。\n3. 快速排序：快速排序是一种高效的']], 'chat_end_flag': 0}
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1. 冒泡排序：这是一种简单直观的排序方法，它通过比较相邻的元素并按照顺序交换它们的位置，从而实现排序 的目的。\n2. 插入排序：插入排序是一种简单直观的排序方法，它通过构建有序序列来对给定的数据进行排序的目的。\n3. 快速排序：快速排序是一种高效的排序']], 'chat_end_flag': 0}
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1. 冒泡排序：这是一种简单直观的排序方法，它通过比较相邻的元素并按照顺序交换它们的位置，从而实现排序 的目的。\n2. 插入排序：插入排序是一种简单直观的排序方法，它通过构建有序序列来对给定的数据进行排序的目的。\n3. 快速排序：快速排序是一种高效的排序算法']], 'chat_end_flag': 0}
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1. 冒泡排序：这是一种简单直观的排序方法，它通过比较相邻的元素并按照顺序交换它们的位置，从而实现排序 的目的。\n2. 插入排序：插入排序是一种简单直观的排序方法，它通过构建有序序列来对给定的数据进行排序的目的。\n3. 快速排序：快速排序是一种高效的排序算法，']], 'chat_end_flag': 0}
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1. 冒泡排序：这是一种简单直观的排序方法，它通过比较相邻的元素并按照顺序交换它们的位置，从而实现排序 的目的。\n2. 插入排序：插入排序是一种简单直观的排序方法，它通过构建有序序列来对给定的数据进行排序的目的。\n3. 快速排序：快速排序是一种高效的排序算法，它']], 'chat_end_flag': 0}
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1. 冒泡排序：这是一种简单直观的排序方法，它通过比较相邻的元素并按照顺序交换它们的位置，从而实现排序 的目的。\n2. 插入排序：插入排序是一种简单直观的排序方法，它通过构建有序序列来对给定的数据进行排序的目的。\n3. 快速排序：快速排序是一种高效的排序算法，它通过']], 'chat_end_flag': 0}
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1. 冒泡排序：这是一种简单直观的排序方法，它通过比较相邻的元素并按照顺序交换它们的位置，从而实现排序 的目的。\n2. 插入排序：插入排序是一种简单直观的排序方法，它通过构建有序序列来对给定的数据进行排序的目的。\n3. 快速排序：快速排序是一种高效的排序算法，它通过分']], 'chat_end_flag': 0}
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1. 冒泡排序：这是一种简单直观的排序方法，它通过比较相邻的元素并按照顺序交换它们的位置，从而实现排序 的目的。\n2. 插入排序：插入排序是一种简单直观的排序方法，它通过构建有序序列来对给定的数据进行排序的目的。\n3. 快速排序：快速排序是一种高效的排序算法，它通过分治']], 'chat_end_flag': 0}
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1. 冒泡排序：这是一种简单直观的排序方法，它通过比较相邻的元素并按照顺序交换它们的位置，从而实现排序 的目的。\n2. 插入排序：插入排序是一种简单直观的排序方法，它通过构建有序序列来对给定的数据进行排序的目的。\n3. 快速排序：快速排序是一种高效的排序算法，它通过分治策略']], 'chat_end_flag': 0}
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1. 冒泡排序：这是一种简单直观的排序方法，它通过比较相邻的元素并按照顺序交换它们的位置，从而实现排序 的目的。\n2. 插入排序：插入排序是一种简单直观的排序方法，它通过构建有序序列来对给定的数据进行排序的目的。\n3. 快速排序：快速排序是一种高效的排序算法，它通过分治策略将待']], 'chat_end_flag': 0}
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1. 冒泡排序：这是一种简单直观的排序方法，它通过比较相邻的元素并按照顺序交换它们的位置，从而实现排序 的目的。\n2. 插入排序：插入排序是一种简单直观的排序方法，它通过构建有序序列来对给定的数据进行排序的目的。\n3. 快速排序：快速排序是一种高效的排序算法，它通过分治策略将待排序']], 'chat_end_flag': 0}
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1. 冒泡排序：这是一种简单直观的排序方法，它通过比较相邻的元素并按照顺序交换它们的位置，从而实现排序 的目的。\n2. 插入排序：插入排序是一种简单直观的排序方法，它通过构建有序序列来对给定的数据进行排序的目的。\n3. 快速排序：快速排序是一种高效的排序算法，它通过分治策略将待排序的数据']], 'chat_end_flag': 0}
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1. 冒泡排序：这是一种简单直观的排序方法，它通过比较相邻的元素并按照顺序交换它们的位置，从而实现排序 的目的。\n2. 插入排序：插入排序是一种简单直观的排序方法，它通过构建有序序列来对给定的数据进行排序的目的。\n3. 快速排序：快速排序是一种高效的排序算法，它通过分治策略将待排序的数据分割']], 'chat_end_flag': 0}
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1. 冒泡排序：这是一种简单直观的排序方法，它通过比较相邻的元素并按照顺序交换它们的位置，从而实现排序 的目的。\n2. 插入排序：插入排序是一种简单直观的排序方法，它通过构建有序序列来对给定的数据进行排序的目的。\n3. 快速排序：快速排序是一种高效的排序算法，它通过分治策略将待排序的数据分割成']], 'chat_end_flag': 0}
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1. 冒泡排序：这是一种简单直观的排序方法，它通过比较相邻的元素并按照顺序交换它们的位置，从而实现排序 的目的。\n2. 插入排序：插入排序是一种简单直观的排序方法，它通过构建有序序列来对给定的数据进行排序的目的。\n3. 快速排序：快速排序是一种高效的排序算法，它通过分治策略将待排序的数据分割成若干']], 'chat_end_flag': 0}
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1. 冒泡排序：这是一种简单直观的排序方法，它通过比较相邻的元素并按照顺序交换它们的位置，从而实现排序 的目的。\n2. 插入排序：插入排序是一种简单直观的排序方法，它通过构建有序序列来对给定的数据进行排序的目的。\n3. 快速排序：快速排序是一种高效的排序算法，它通过分治策略将待排序的数据分割成若干个']], 'chat_end_flag': 0}
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1. 冒泡排序：这是一种简单直观的排序方法，它通过比较相邻的元素并按照顺序交换它们的位置，从而实现排序 的目的。\n2. 插入排序：插入排序是一种简单直观的排序方法，它通过构建有序序列来对给定的数据进行排序的目的。\n3. 快速排序：快速排序是一种高效的排序算法，它通过分治策略将待排序的数据分割成若干个子']], 'chat_end_flag': 0}
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1. 冒泡排序：这是一种简单直观的排序方法，它通过比较相邻的元素并按照顺序交换它们的位置，从而实现排序 的目的。\n2. 插入排序：插入排序是一种简单直观的排序方法，它通过构建有序序列来对给定的数据进行排序的目的。\n3. 快速排序：快速排序是一种高效的排序算法，它通过分治策略将待排序的数据分割成若干个子序列']], 'chat_end_flag': 0}
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1. 冒泡排序：这是一种简单直观的排序方法，它通过比较相邻的元素并按照顺序交换它们的位置，从而实现排序 的目的。\n2. 插入排序：插入排序是一种简单直观的排序方法，它通过构建有序序列来对给定的数据进行排序的目的。\n3. 快速排序：快速排序是一种高效的排序算法，它通过分治策略将待排序的数据分割成若干个子序列，并']], 'chat_end_flag': 0}
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1. 冒泡排序：这是一种简单直观的排序方法，它通过比较相邻的元素并按照顺序交换它们的位置，从而实现排序 的目的。\n2. 插入排序：插入排序是一种简单直观的排序方法，它通过构建有序序列来对给定的数据进行排序的目的。\n3. 快速排序：快速排序是一种高效的排序算法，它通过分治策略将待排序的数据分割成若干个子序列，并对']], 'chat_end_flag': 0}
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1. 冒泡排序：这是一种简单直观的排序方法，它通过比较相邻的元素并按照顺序交换它们的位置，从而实现排序 的目的。\n2. 插入排序：插入排序是一种简单直观的排序方法，它通过构建有序序列来对给定的数据进行排序的目的。\n3. 快速排序：快速排序是一种高效的排序算法，它通过分治策略将待排序的数据分割成若干个子序列，并对这些']], 'chat_end_flag': 0}
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1. 冒泡排序：这是一种简单直观的排序方法，它通过比较相邻的元素并按照顺序交换它们的位置，从而实现排序 的目的。\n2. 插入排序：插入排序是一种简单直观的排序方法，它通过构建有序序列来对给定的数据进行排序的目的。\n3. 快速排序：快速排序是一种高效的排序算法，它通过分治策略将待排序的数据分割成若干个子序列，并对这些子']], 'chat_end_flag': 0}
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1. 冒泡排序：这是一种简单直观的排序方法，它通过比较相邻的元素并按照顺序交换它们的位置，从而实现排序 的目的。\n2. 插入排序：插入排序是一种简单直观的排序方法，它通过构建有序序列来对给定的数据进行排序的目的。\n3. 快速排序：快速排序是一种高效的排序算法，它通过分治策略将待排序的数据分割成若干个子序列，并对这些子序列']], 'chat_end_flag': 0}
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1. 冒泡排序：这是一种简单直观的排序方法，它通过比较相邻的元素并按照顺序交换它们的位置，从而实现排序 的目的。\n2. 插入排序：插入排序是一种简单直观的排序方法，它通过构建有序序列来对给定的数据进行排序的目的。\n3. 快速排序：快速排序是一种高效的排序算法，它通过分治策略将待排序的数据分割成若干个子序列，并对这些子序列分别']], 'chat_end_flag': 0}
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1. 冒泡排序：这是一种简单直观的排序方法，它通过比较相邻的元素并按照顺序交换它们的位置，从而实现排序 的目的。\n2. 插入排序：插入排序是一种简单直观的排序方法，它通过构建有序序列来对给定的数据进行排序的目的。\n3. 快速排序：快速排序是一种高效的排序算法，它通过分治策略将待排序的数据分割成若干个子序列，并对这些子序列分别进行']], 'chat_end_flag': 0}
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1. 冒泡排序：这是一种简单直观的排序方法，它通过比较相邻的元素并按照顺序交换它们的位置，从而实现排序 的目的。\n2. 插入排序：插入排序是一种简单直观的排序方法，它通过构建有序序列来对给定的数据进行排序的目的。\n3. 快速排序：快速排序是一种高效的排序算法，它通过分治策略将待排序的数据分割成若干个子序列，并对这些子序列分别进行排序']], 'chat_end_flag': 0}
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1. 冒泡排序：这是一种简单直观的排序方法，它通过比较相邻的元素并按照顺序交换它们的位置，从而实现排序 的目的。\n2. 插入排序：插入排序是一种简单直观的排序方法，它通过构建有序序列来对给定的数据进行排序的目的。\n3. 快速排序：快速排序是一种高效的排序算法，它通过分治策略将待排序的数据分割成若干个子序列，并对这些子序列分别进行排序，']], 'chat_end_flag': 0}
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1. 冒泡排序：这是一种简单直观的排序方法，它通过比较相邻的元素并按照顺序交换它们的位置，从而实现排序 的目的。\n2. 插入排序：插入排序是一种简单直观的排序方法，它通过构建有序序列来对给定的数据进行排序的目的。\n3. 快速排序：快速排序是一种高效的排序算法，它通过分治策略将待排序的数据分割成若干个子序列，并对这些子序列分别进行排序，从而']], 'chat_end_flag': 0}
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1. 冒泡排序：这是一种简单直观的排序方法，它通过比较相邻的元素并按照顺序交换它们的位置，从而实现排序 的目的。\n2. 插入排序：插入排序是一种简单直观的排序方法，它通过构建有序序列来对给定的数据进行排序的目的。\n3. 快速排序：快速排序是一种高效的排序算法，它通过分治策略将待排序的数据分割成若干个子序列，并对这些子序列分别进行排序，从而实现']], 'chat_end_flag': 0}
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1. 冒泡排序：这是一种简单直观的排序方法，它通过比较相邻的元素并按照顺序交换它们的位置，从而实现排序 的目的。\n2. 插入排序：插入排序是一种简单直观的排序方法，它通过构建有序序列来对给定的数据进行排序的目的。\n3. 快速排序：快速排序是一种高效的排序算法，它通过分治策略将待排序的数据分割成若干个子序列，并对这些子序列分别进行排序，从而实现排序']], 'chat_end_flag': 0}
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1. 冒泡排序：这是一种简单直观的排序方法，它通过比较相邻的元素并按照顺序交换它们的位置，从而实现排序 的目的。\n2. 插入排序：插入排序是一种简单直观的排序方法，它通过构建有序序列来对给定的数据进行排序的目的。\n3. 快速排序：快速排序是一种高效的排序算法，它通过分治策略将待排序的数据分割成若干个子序列，并对这些子序列分别进行排序，从而实现排序的目的']], 'chat_end_flag': 0}
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1. 冒泡排序：这是一种简单直观的排序方法，它通过比较相邻的元素并按照顺序交换它们的位置，从而实现排序 的目的。\n2. 插入排序：插入排序是一种简单直观的排序方法，它通过构建有序序列来对给定的数据进行排序的目的。\n3. 快速排序：快速排序是一种高效的排序算法，它通过分治策略将待排序的数据分割成若干个子序列，并对这些子序列分别进行排序，从而实现排序的目的。']], 'chat_end_flag': 0}
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1. 冒泡排序：这是一种简单直观的排序方法，它通过比较相邻的元素并按照顺序交换它们的位置，从而实现排序 的目的。\n2. 插入排序：插入排序是一种简单直观的排序方法，它通过构建有序序列来对给定的数据进行排序的目的。\n3. 快速排序：快速排序是一种高效的排序算法，它通过分治策略将待排序的数据分割成若干个子序列，并对这些子序列分别进行排序，从而实现排序的目的。\n4']], 'chat_end_flag': 0}
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1. 冒泡排序：这是一种简单直观的排序方法，它通过比较相邻的元素并按照顺序交换它们的位置，从而实现排序 的目的。\n2. 插入排序：插入排序是一种简单直观的排序方法，它通过构建有序序列来对给定的数据进行排序的目的。\n3. 快速排序：快速排序是一种高效的排序算法，它通过分治策略将待排序的数据分割成若干个子序列，并对这些子序列分别进行排序，从而实现排序的目的。\n4.']], 'chat_end_flag': 0}
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1. 冒泡排序：这是一种简单直观的排序方法，它通过比较相邻的元素并按照顺序交换它们的位置，从而实现排序 的目的。\n2. 插入排序：插入排序是一种简单直观的排序方法，它通过构建有序序列来对给定的数据进行排序的目的。\n3. 快速排序：快速排序是一种高效的排序算法，它通过分治策略将待排序的数据分割成若干个子序列，并对这些子序列分别进行排序，从而实现排序的目的。\n4. 归']], 'chat_end_flag': 0}
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1. 冒泡排序：这是一种简单直观的排序方法，它通过比较相邻的元素并按照顺序交换它们的位置，从而实现排序 的目的。\n2. 插入排序：插入排序是一种简单直观的排序方法，它通过构建有序序列来对给定的数据进行排序的目的。\n3. 快速排序：快速排序是一种高效的排序算法，它通过分治策略将待排序的数据分割成若干个子序列，并对这些子序列分别进行排序，从而实现排序的目的。\n4. 归并']], 'chat_end_flag': 0}
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1. 冒泡排序：这是一种简单直观的排序方法，它通过比较相邻的元素并按照顺序交换它们的位置，从而实现排序 的目的。\n2. 插入排序：插入排序是一种简单直观的排序方法，它通过构建有序序列来对给定的数据进行排序的目的。\n3. 快速排序：快速排序是一种高效的排序算法，它通过分治策略将待排序的数据分割成若干个子序列，并对这些子序列分别进行排序，从而实现排序的目的。\n4. 归并排序：']], 'chat_end_flag': 0}
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1. 冒泡排序：这是一种简单直观的排序方法，它通过比较相邻的元素并按照顺序交换它们的位置，从而实现排序 的目的。\n2. 插入排序：插入排序是一种简单直观的排序方法，它通过构建有序序列来对给定的数据进行排序的目的。\n3. 快速排序：快速排序是一种高效的排序算法，它通过分治策略将待排序的数据分割成若干个子序列，并对这些子序列分别进行排序，从而实现排序的目的。\n4. 归并排序：']], 'chat_end_flag': 0}
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1. 冒泡排序：这是一种简单直观的排序方法，它通过比较相邻的元素并按照顺序交换它们的位置，从而实现排序 的目的。\n2. 插入排序：插入排序是一种简单直观的排序方法，它通过构建有序序列来对给定的数据进行排序的目的。\n3. 快速排序：快速排序是一种高效的排序算法，它通过分治策略将待排序的数据分割成若干个子序列，并对这些子序列分别进行排序，从而实现排序的目的。\n4. 归并排序：归']], 'chat_end_flag': 0}
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1. 冒泡排序：这是一种简单直观的排序方法，它通过比较相邻的元素并按照顺序交换它们的位置，从而实现排序 的目的。\n2. 插入排序：插入排序是一种简单直观的排序方法，它通过构建有序序列来对给定的数据进行排序的目的。\n3. 快速排序：快速排序是一种高效的排序算法，它通过分治策略将待排序的数据分割成若干个子序列，并对这些子序列分别进行排序，从而实现排序的目的。\n4. 归并排序：归并排序']], 'chat_end_flag': 0}
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1. 冒泡排序：这是一种简单直观的排序方法，它通过比较相邻的元素并按照顺序交换它们的位置，从而实现排序 的目的。\n2. 插入排序：插入排序是一种简单直观的排序方法，它通过构建有序序列来对给定的数据进行排序的目的。\n3. 快速排序：快速排序是一种高效的排序算法，它通过分治策略将待排序的数据分割成若干个子序列，并对这些子序列分别进行排序，从而实现排序的目的。\n4. 归并排序：归并排序是一种']], 'chat_end_flag': 0}
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1. 冒泡排序：这是一种简单直观的排序方法，它通过比较相邻的元素并按照顺序交换它们的位置，从而实现排序 的目的。\n2. 插入排序：插入排序是一种简单直观的排序方法，它通过构建有序序列来对给定的数据进行排序的目的。\n3. 快速排序：快速排序是一种高效的排序算法，它通过分治策略将待排序的数据分割成若干个子序列，并对这些子序列分别进行排序，从而实现排序的目的。\n4. 归并排序：归并排序是一种稳定的']], 'chat_end_flag': 0}
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1. 冒泡排序：这是一种简单直观的排序方法，它通过比较相邻的元素并按照顺序交换它们的位置，从而实现排序 的目的。\n2. 插入排序：插入排序是一种简单直观的排序方法，它通过构建有序序列来对给定的数据进行排序的目的。\n3. 快速排序：快速排序是一种高效的排序算法，它通过分治策略将待排序的数据分割成若干个子序列，并对这些子序列分别进行排序，从而实现排序的目的。\n4. 归并排序：归并排序是一种稳定的排序']], 'chat_end_flag': 0}
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1. 冒泡排序：这是一种简单直观的排序方法，它通过比较相邻的元素并按照顺序交换它们的位置，从而实现排序 的目的。\n2. 插入排序：插入排序是一种简单直观的排序方法，它通过构建有序序列来对给定的数据进行排序的目的。\n3. 快速排序：快速排序是一种高效的排序算法，它通过分治策略将待排序的数据分割成若干个子序列，并对这些子序列分别进行排序，从而实现排序的目的。\n4. 归并排序：归并排序是一种稳定的排序算法']], 'chat_end_flag': 0}
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1. 冒泡排序：这是一种简单直观的排序方法，它通过比较相邻的元素并按照顺序交换它们的位置，从而实现排序 的目的。\n2. 插入排序：插入排序是一种简单直观的排序方法，它通过构建有序序列来对给定的数据进行排序的目的。\n3. 快速排序：快速排序是一种高效的排序算法，它通过分治策略将待排序的数据分割成若干个子序列，并对这些子序列分别进行排序，从而实现排序的目的。\n4. 归并排序：归并排序是一种稳定的排序算法，']], 'chat_end_flag': 0}
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1. 冒泡排序：这是一种简单直观的排序方法，它通过比较相邻的元素并按照顺序交换它们的位置，从而实现排序 的目的。\n2. 插入排序：插入排序是一种简单直观的排序方法，它通过构建有序序列来对给定的数据进行排序的目的。\n3. 快速排序：快速排序是一种高效的排序算法，它通过分治策略将待排序的数据分割成若干个子序列，并对这些子序列分别进行排序，从而实现排序的目的。\n4. 归并排序：归并排序是一种稳定的排序算法，它']], 'chat_end_flag': 0}
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1. 冒泡排序：这是一种简单直观的排序方法，它通过比较相邻的元素并按照顺序交换它们的位置，从而实现排序 的目的。\n2. 插入排序：插入排序是一种简单直观的排序方法，它通过构建有序序列来对给定的数据进行排序的目的。\n3. 快速排序：快速排序是一种高效的排序算法，它通过分治策略将待排序的数据分割成若干个子序列，并对这些子序列分别进行排序，从而实现排序的目的。\n4. 归并排序：归并排序是一种稳定的排序算法，它通过']], 'chat_end_flag': 0}
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1. 冒泡排序：这是一种简单直观的排序方法，它通过比较相邻的元素并按照顺序交换它们的位置，从而实现排序 的目的。\n2. 插入排序：插入排序是一种简单直观的排序方法，它通过构建有序序列来对给定的数据进行排序的目的。\n3. 快速排序：快速排序是一种高效的排序算法，它通过分治策略将待排序的数据分割成若干个子序列，并对这些子序列分别进行排序，从而实现排序的目的。\n4. 归并排序：归并排序是一种稳定的排序算法，它通过分']], 'chat_end_flag': 0}
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1. 冒泡排序：这是一种简单直观的排序方法，它通过比较相邻的元素并按照顺序交换它们的位置，从而实现排序 的目的。\n2. 插入排序：插入排序是一种简单直观的排序方法，它通过构建有序序列来对给定的数据进行排序的目的。\n3. 快速排序：快速排序是一种高效的排序算法，它通过分治策略将待排序的数据分割成若干个子序列，并对这些子序列分别进行排序，从而实现排序的目的。\n4. 归并排序：归并排序是一种稳定的排序算法，它通过分治']], 'chat_end_flag': 0}
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1. 冒泡排序：这是一种简单直观的排序方法，它通过比较相邻的元素并按照顺序交换它们的位置，从而实现排序 的目的。\n2. 插入排序：插入排序是一种简单直观的排序方法，它通过构建有序序列来对给定的数据进行排序的目的。\n3. 快速排序：快速排序是一种高效的排序算法，它通过分治策略将待排序的数据分割成若干个子序列，并对这些子序列分别进行排序，从而实现排序的目的。\n4. 归并排序：归并排序是一种稳定的排序算法，它通过分治策略']], 'chat_end_flag': 0}
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1. 冒泡排序：这是一种简单直观的排序方法，它通过比较相邻的元素并按照顺序交换它们的位置，从而实现排序 的目的。\n2. 插入排序：插入排序是一种简单直观的排序方法，它通过构建有序序列来对给定的数据进行排序的目的。\n3. 快速排序：快速排序是一种高效的排序算法，它通过分治策略将待排序的数据分割成若干个子序列，并对这些子序列分别进行排序，从而实现排序的目的。\n4. 归并排序：归并排序是一种稳定的排序算法，它通过分治策略将']], 'chat_end_flag': 0}
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1. 冒泡排序：这是一种简单直观的排序方法，它通过比较相邻的元素并按照顺序交换它们的位置，从而实现排序 的目的。\n2. 插入排序：插入排序是一种简单直观的排序方法，它通过构建有序序列来对给定的数据进行排序的目的。\n3. 快速排序：快速排序是一种高效的排序算法，它通过分治策略将待排序的数据分割成若干个子序列，并对这些子序列分别进行排序，从而实现排序的目的。\n4. 归并排序：归并排序是一种稳定的排序算法，它通过分治策略将待']], 'chat_end_flag': 0}
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1. 冒泡排序：这是一种简单直观的排序方法，它通过比较相邻的元素并按照顺序交换它们的位置，从而实现排序 的目的。\n2. 插入排序：插入排序是一种简单直观的排序方法，它通过构建有序序列来对给定的数据进行排序的目的。\n3. 快速排序：快速排序是一种高效的排序算法，它通过分治策略将待排序的数据分割成若干个子序列，并对这些子序列分别进行排序，从而实现排序的目的。\n4. 归并排序：归并排序是一种稳定的排序算法，它通过分治策略将待排序']], 'chat_end_flag': 0}
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1. 冒泡排序：这是一种简单直观的排序方法，它通过比较相邻的元素并按照顺序交换它们的位置，从而实现排序 的目的。\n2. 插入排序：插入排序是一种简单直观的排序方法，它通过构建有序序列来对给定的数据进行排序的目的。\n3. 快速排序：快速排序是一种高效的排序算法，它通过分治策略将待排序的数据分割成若干个子序列，并对这些子序列分别进行排序，从而实现排序的目的。\n4. 归并排序：归并排序是一种稳定的排序算法，它通过分治策略将待排序的数据']], 'chat_end_flag': 0}
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1. 冒泡排序：这是一种简单直观的排序方法，它通过比较相邻的元素并按照顺序交换它们的位置，从而实现排序 的目的。\n2. 插入排序：插入排序是一种简单直观的排序方法，它通过构建有序序列来对给定的数据进行排序的目的。\n3. 快速排序：快速排序是一种高效的排序算法，它通过分治策略将待排序的数据分割成若干个子序列，并对这些子序列分别进行排序，从而实现排序的目的。\n4. 归并排序：归并排序是一种稳定的排序算法，它通过分治策略将待排序的数据分割']], 'chat_end_flag': 0}
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1. 冒泡排序：这是一种简单直观的排序方法，它通过比较相邻的元素并按照顺序交换它们的位置，从而实现排序 的目的。\n2. 插入排序：插入排序是一种简单直观的排序方法，它通过构建有序序列来对给定的数据进行排序的目的。\n3. 快速排序：快速排序是一种高效的排序算法，它通过分治策略将待排序的数据分割成若干个子序列，并对这些子序列分别进行排序，从而实现排序的目的。\n4. 归并排序：归并排序是一种稳定的排序算法，它通过分治策略将待排序的数据分割成']], 'chat_end_flag': 0}
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1. 冒泡排序：这是一种简单直观的排序方法，它通过比较相邻的元素并按照顺序交换它们的位置，从而实现排序 的目的。\n2. 插入排序：插入排序是一种简单直观的排序方法，它通过构建有序序列来对给定的数据进行排序的目的。\n3. 快速排序：快速排序是一种高效的排序算法，它通过分治策略将待排序的数据分割成若干个子序列，并对这些子序列分别进行排序，从而实现排序的目的。\n4. 归并排序：归并排序是一种稳定的排序算法，它通过分治策略将待排序的数据分割成若干']], 'chat_end_flag': 0}
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1. 冒泡排序：这是一种简单直观的排序方法，它通过比较相邻的元素并按照顺序交换它们的位置，从而实现排序 的目的。\n2. 插入排序：插入排序是一种简单直观的排序方法，它通过构建有序序列来对给定的数据进行排序的目的。\n3. 快速排序：快速排序是一种高效的排序算法，它通过分治策略将待排序的数据分割成若干个子序列，并对这些子序列分别进行排序，从而实现排序的目的。\n4. 归并排序：归并排序是一种稳定的排序算法，它通过分治策略将待排序的数据分割成若干个']], 'chat_end_flag': 0}
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1. 冒泡排序：这是一种简单直观的排序方法，它通过比较相邻的元素并按照顺序交换它们的位置，从而实现排序 的目的。\n2. 插入排序：插入排序是一种简单直观的排序方法，它通过构建有序序列来对给定的数据进行排序的目的。\n3. 快速排序：快速排序是一种高效的排序算法，它通过分治策略将待排序的数据分割成若干个子序列，并对这些子序列分别进行排序，从而实现排序的目的。\n4. 归并排序：归并排序是一种稳定的排序算法，它通过分治策略将待排序的数据分割成若干个子']], 'chat_end_flag': 0}
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1. 冒泡排序：这是一种简单直观的排序方法，它通过比较相邻的元素并按照顺序交换它们的位置，从而实现排序 的目的。\n2. 插入排序：插入排序是一种简单直观的排序方法，它通过构建有序序列来对给定的数据进行排序的目的。\n3. 快速排序：快速排序是一种高效的排序算法，它通过分治策略将待排序的数据分割成若干个子序列，并对这些子序列分别进行排序，从而实现排序的目的。\n4. 归并排序：归并排序是一种稳定的排序算法，它通过分治策略将待排序的数据分割成若干个子序列']], 'chat_end_flag': 0}
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1. 冒泡排序：这是一种简单直观的排序方法，它通过比较相邻的元素并按照顺序交换它们的位置，从而实现排序 的目的。\n2. 插入排序：插入排序是一种简单直观的排序方法，它通过构建有序序列来对给定的数据进行排序的目的。\n3. 快速排序：快速排序是一种高效的排序算法，它通过分治策略将待排序的数据分割成若干个子序列，并对这些子序列分别进行排序，从而实现排序的目的。\n4. 归并排序：归并排序是一种稳定的排序算法，它通过分治策略将待排序的数据分割成若干个子序列，并']], 'chat_end_flag': 0}
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1. 冒泡排序：这是一种简单直观的排序方法，它通过比较相邻的元素并按照顺序交换它们的位置，从而实现排序 的目的。\n2. 插入排序：插入排序是一种简单直观的排序方法，它通过构建有序序列来对给定的数据进行排序的目的。\n3. 快速排序：快速排序是一种高效的排序算法，它通过分治策略将待排序的数据分割成若干个子序列，并对这些子序列分别进行排序，从而实现排序的目的。\n4. 归并排序：归并排序是一种稳定的排序算法，它通过分治策略将待排序的数据分割成若干个子序列，并对']], 'chat_end_flag': 0}
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1. 冒泡排序：这是一种简单直观的排序方法，它通过比较相邻的元素并按照顺序交换它们的位置，从而实现排序 的目的。\n2. 插入排序：插入排序是一种简单直观的排序方法，它通过构建有序序列来对给定的数据进行排序的目的。\n3. 快速排序：快速排序是一种高效的排序算法，它通过分治策略将待排序的数据分割成若干个子序列，并对这些子序列分别进行排序，从而实现排序的目的。\n4. 归并排序：归并排序是一种稳定的排序算法，它通过分治策略将待排序的数据分割成若干个子序列，并对这些']], 'chat_end_flag': 0}
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1. 冒泡排序：这是一种简单直观的排序方法，它通过比较相邻的元素并按照顺序交换它们的位置，从而实现排序 的目的。\n2. 插入排序：插入排序是一种简单直观的排序方法，它通过构建有序序列来对给定的数据进行排序的目的。\n3. 快速排序：快速排序是一种高效的排序算法，它通过分治策略将待排序的数据分割成若干个子序列，并对这些子序列分别进行排序，从而实现排序的目的。\n4. 归并排序：归并排序是一种稳定的排序算法，它通过分治策略将待排序的数据分割成若干个子序列，并对这些子']], 'chat_end_flag': 0}
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1. 冒泡排序：这是一种简单直观的排序方法，它通过比较相邻的元素并按照顺序交换它们的位置，从而实现排序 的目的。\n2. 插入排序：插入排序是一种简单直观的排序方法，它通过构建有序序列来对给定的数据进行排序的目的。\n3. 快速排序：快速排序是一种高效的排序算法，它通过分治策略将待排序的数据分割成若干个子序列，并对这些子序列分别进行排序，从而实现排序的目的。\n4. 归并排序：归并排序是一种稳定的排序算法，它通过分治策略将待排序的数据分割成若干个子序列，并对这些子序列']], 'chat_end_flag': 0}
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1. 冒泡排序：这是一种简单直观的排序方法，它通过比较相邻的元素并按照顺序交换它们的位置，从而实现排序 的目的。\n2. 插入排序：插入排序是一种简单直观的排序方法，它通过构建有序序列来对给定的数据进行排序的目的。\n3. 快速排序：快速排序是一种高效的排序算法，它通过分治策略将待排序的数据分割成若干个子序列，并对这些子序列分别进行排序，从而实现排序的目的。\n4. 归并排序：归并排序是一种稳定的排序算法，它通过分治策略将待排序的数据分割成若干个子序列，并对这些子序列分别']], 'chat_end_flag': 0}
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1. 冒泡排序：这是一种简单直观的排序方法，它通过比较相邻的元素并按照顺序交换它们的位置，从而实现排序 的目的。\n2. 插入排序：插入排序是一种简单直观的排序方法，它通过构建有序序列来对给定的数据进行排序的目的。\n3. 快速排序：快速排序是一种高效的排序算法，它通过分治策略将待排序的数据分割成若干个子序列，并对这些子序列分别进行排序，从而实现排序的目的。\n4. 归并排序：归并排序是一种稳定的排序算法，它通过分治策略将待排序的数据分割成若干个子序列，并对这些子序列分别进行']], 'chat_end_flag': 0}
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1. 冒泡排序：这是一种简单直观的排序方法，它通过比较相邻的元素并按照顺序交换它们的位置，从而实现排序 的目的。\n2. 插入排序：插入排序是一种简单直观的排序方法，它通过构建有序序列来对给定的数据进行排序的目的。\n3. 快速排序：快速排序是一种高效的排序算法，它通过分治策略将待排序的数据分割成若干个子序列，并对这些子序列分别进行排序，从而实现排序的目的。\n4. 归并排序：归并排序是一种稳定的排序算法，它通过分治策略将待排序的数据分割成若干个子序列，并对这些子序列分别进行排序']], 'chat_end_flag': 0}
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1. 冒泡排序：这是一种简单直观的排序方法，它通过比较相邻的元素并按照顺序交换它们的位置，从而实现排序 的目的。\n2. 插入排序：插入排序是一种简单直观的排序方法，它通过构建有序序列来对给定的数据进行排序的目的。\n3. 快速排序：快速排序是一种高效的排序算法，它通过分治策略将待排序的数据分割成若干个子序列，并对这些子序列分别进行排序，从而实现排序的目的。\n4. 归并排序：归并排序是一种稳定的排序算法，它通过分治策略将待排序的数据分割成若干个子序列，并对这些子序列分别进行排序，']], 'chat_end_flag': 0}
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1. 冒泡排序：这是一种简单直观的排序方法，它通过比较相邻的元素并按照顺序交换它们的位置，从而实现排序 的目的。\n2. 插入排序：插入排序是一种简单直观的排序方法，它通过构建有序序列来对给定的数据进行排序的目的。\n3. 快速排序：快速排序是一种高效的排序算法，它通过分治策略将待排序的数据分割成若干个子序列，并对这些子序列分别进行排序，从而实现排序的目的。\n4. 归并排序：归并排序是一种稳定的排序算法，它通过分治策略将待排序的数据分割成若干个子序列，并对这些子序列分别进行排序，然后']], 'chat_end_flag': 0}
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1. 冒泡排序：这是一种简单直观的排序方法，它通过比较相邻的元素并按照顺序交换它们的位置，从而实现排序 的目的。\n2. 插入排序：插入排序是一种简单直观的排序方法，它通过构建有序序列来对给定的数据进行排序的目的。\n3. 快速排序：快速排序是一种高效的排序算法，它通过分治策略将待排序的数据分割成若干个子序列，并对这些子序列分别进行排序，从而实现排序的目的。\n4. 归并排序：归并排序是一种稳定的排序算法，它通过分治策略将待排序的数据分割成若干个子序列，并对这些子序列分别进行排序，然后 将']], 'chat_end_flag': 0}
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1. 冒泡排序：这是一种简单直观的排序方法，它通过比较相邻的元素并按照顺序交换它们的位置，从而实现排序 的目的。\n2. 插入排序：插入排序是一种简单直观的排序方法，它通过构建有序序列来对给定的数据进行排序的目的。\n3. 快速排序：快速排序是一种高效的排序算法，它通过分治策略将待排序的数据分割成若干个子序列，并对这些子序列分别进行排序，从而实现排序的目的。\n4. 归并排序：归并排序是一种稳定的排序算法，它通过分治策略将待排序的数据分割成若干个子序列，并对这些子序列分别进行排序，然后 将所有']], 'chat_end_flag': 0}
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1. 冒泡排序：这是一种简单直观的排序方法，它通过比较相邻的元素并按照顺序交换它们的位置，从而实现排序 的目的。\n2. 插入排序：插入排序是一种简单直观的排序方法，它通过构建有序序列来对给定的数据进行排序的目的。\n3. 快速排序：快速排序是一种高效的排序算法，它通过分治策略将待排序的数据分割成若干个子序列，并对这些子序列分别进行排序，从而实现排序的目的。\n4. 归并排序：归并排序是一种稳定的排序算法，它通过分治策略将待排序的数据分割成若干个子序列，并对这些子序列分别进行排序，然后 将所有子']], 'chat_end_flag': 0}
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1. 冒泡排序：这是一种简单直观的排序方法，它通过比较相邻的元素并按照顺序交换它们的位置，从而实现排序 的目的。\n2. 插入排序：插入排序是一种简单直观的排序方法，它通过构建有序序列来对给定的数据进行排序的目的。\n3. 快速排序：快速排序是一种高效的排序算法，它通过分治策略将待排序的数据分割成若干个子序列，并对这些子序列分别进行排序，从而实现排序的目的。\n4. 归并排序：归并排序是一种稳定的排序算法，它通过分治策略将待排序的数据分割成若干个子序列，并对这些子序列分别进行排序，然后 将所有子序列']], 'chat_end_flag': 0}
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1. 冒泡排序：这是一种简单直观的排序方法，它通过比较相邻的元素并按照顺序交换它们的位置，从而实现排序 的目的。\n2. 插入排序：插入排序是一种简单直观的排序方法，它通过构建有序序列来对给定的数据进行排序的目的。\n3. 快速排序：快速排序是一种高效的排序算法，它通过分治策略将待排序的数据分割成若干个子序列，并对这些子序列分别进行排序，从而实现排序的目的。\n4. 归并排序：归并排序是一种稳定的排序算法，它通过分治策略将待排序的数据分割成若干个子序列，并对这些子序列分别进行排序，然后 将所有子序列合并']], 'chat_end_flag': 0}
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1. 冒泡排序：这是一种简单直观的排序方法，它通过比较相邻的元素并按照顺序交换它们的位置，从而实现排序 的目的。\n2. 插入排序：插入排序是一种简单直观的排序方法，它通过构建有序序列来对给定的数据进行排序的目的。\n3. 快速排序：快速排序是一种高效的排序算法，它通过分治策略将待排序的数据分割成若干个子序列，并对这些子序列分别进行排序，从而实现排序的目的。\n4. 归并排序：归并排序是一种稳定的排序算法，它通过分治策略将待排序的数据分割成若干个子序列，并对这些子序列分别进行排序，然后 将所有子序列合并成']], 'chat_end_flag': 0}
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1. 冒泡排序：这是一种简单直观的排序方法，它通过比较相邻的元素并按照顺序交换它们的位置，从而实现排序 的目的。\n2. 插入排序：插入排序是一种简单直观的排序方法，它通过构建有序序列来对给定的数据进行排序的目的。\n3. 快速排序：快速排序是一种高效的排序算法，它通过分治策略将待排序的数据分割成若干个子序列，并对这些子序列分别进行排序，从而实现排序的目的。\n4. 归并排序：归并排序是一种稳定的排序算法，它通过分治策略将待排序的数据分割成若干个子序列，并对这些子序列分别进行排序，然后 将所有子序列合并成一个']], 'chat_end_flag': 0}
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1. 冒泡排序：这是一种简单直观的排序方法，它通过比较相邻的元素并按照顺序交换它们的位置，从而实现排序 的目的。\n2. 插入排序：插入排序是一种简单直观的排序方法，它通过构建有序序列来对给定的数据进行排序的目的。\n3. 快速排序：快速排序是一种高效的排序算法，它通过分治策略将待排序的数据分割成若干个子序列，并对这些子序列分别进行排序，从而实现排序的目的。\n4. 归并排序：归并排序是一种稳定的排序算法，它通过分治策略将待排序的数据分割成若干个子序列，并对这些子序列分别进行排序，然后 将所有子序列合并成一个有序']], 'chat_end_flag': 0}
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1. 冒泡排序：这是一种简单直观的排序方法，它通过比较相邻的元素并按照顺序交换它们的位置，从而实现排序 的目的。\n2. 插入排序：插入排序是一种简单直观的排序方法，它通过构建有序序列来对给定的数据进行排序的目的。\n3. 快速排序：快速排序是一种高效的排序算法，它通过分治策略将待排序的数据分割成若干个子序列，并对这些子序列分别进行排序，从而实现排序的目的。\n4. 归并排序：归并排序是一种稳定的排序算法，它通过分治策略将待排序的数据分割成若干个子序列，并对这些子序列分别进行排序，然后 将所有子序列合并成一个有序序列']], 'chat_end_flag': 0}
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1. 冒泡排序：这是一种简单直观的排序方法，它通过比较相邻的元素并按照顺序交换它们的位置，从而实现排序 的目的。\n2. 插入排序：插入排序是一种简单直观的排序方法，它通过构建有序序列来对给定的数据进行排序的目的。\n3. 快速排序：快速排序是一种高效的排序算法，它通过分治策略将待排序的数据分割成若干个子序列，并对这些子序列分别进行排序，从而实现排序的目的。\n4. 归并排序：归并排序是一种稳定的排序算法，它通过分治策略将待排序的数据分割成若干个子序列，并对这些子序列分别进行排序，然后 将所有子序列合并成一个有序序列，']], 'chat_end_flag': 0}
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1. 冒泡排序：这是一种简单直观的排序方法，它通过比较相邻的元素并按照顺序交换它们的位置，从而实现排序 的目的。\n2. 插入排序：插入排序是一种简单直观的排序方法，它通过构建有序序列来对给定的数据进行排序的目的。\n3. 快速排序：快速排序是一种高效的排序算法，它通过分治策略将待排序的数据分割成若干个子序列，并对这些子序列分别进行排序，从而实现排序的目的。\n4. 归并排序：归并排序是一种稳定的排序算法，它通过分治策略将待排序的数据分割成若干个子序列，并对这些子序列分别进行排序，然后 将所有子序列合并成一个有序序列，从而']], 'chat_end_flag': 0}
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1. 冒泡排序：这是一种简单直观的排序方法，它通过比较相邻的元素并按照顺序交换它们的位置，从而实现排序 的目的。\n2. 插入排序：插入排序是一种简单直观的排序方法，它通过构建有序序列来对给定的数据进行排序的目的。\n3. 快速排序：快速排序是一种高效的排序算法，它通过分治策略将待排序的数据分割成若干个子序列，并对这些子序列分别进行排序，从而实现排序的目的。\n4. 归并排序：归并排序是一种稳定的排序算法，它通过分治策略将待排序的数据分割成若干个子序列，并对这些子序列分别进行排序，然后 将所有子序列合并成一个有序序列，从而实现']], 'chat_end_flag': 0}
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1. 冒泡排序：这是一种简单直观的排序方法，它通过比较相邻的元素并按照顺序交换它们的位置，从而实现排序 的目的。\n2. 插入排序：插入排序是一种简单直观的排序方法，它通过构建有序序列来对给定的数据进行排序的目的。\n3. 快速排序：快速排序是一种高效的排序算法，它通过分治策略将待排序的数据分割成若干个子序列，并对这些子序列分别进行排序，从而实现排序的目的。\n4. 归并排序：归并排序是一种稳定的排序算法，它通过分治策略将待排序的数据分割成若干个子序列，并对这些子序列分别进行排序，然后 将所有子序列合并成一个有序序列，从而实现排序']], 'chat_end_flag': 0}
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1. 冒泡排序：这是一种简单直观的排序方法，它通过比较相邻的元素并按照顺序交换它们的位置，从而实现排序 的目的。\n2. 插入排序：插入排序是一种简单直观的排序方法，它通过构建有序序列来对给定的数据进行排序的目的。\n3. 快速排序：快速排序是一种高效的排序算法，它通过分治策略将待排序的数据分割成若干个子序列，并对这些子序列分别进行排序，从而实现排序的目的。\n4. 归并排序：归并排序是一种稳定的排序算法，它通过分治策略将待排序的数据分割成若干个子序列，并对这些子序列分别进行排序，然后 将所有子序列合并成一个有序序列，从而实现排序的目的']], 'chat_end_flag': 0}
+因为chatbot的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提供帮助 。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝 你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1. 冒泡排序：这是一种简单直观的排序方法，它通过比较相邻的元素并按照顺序交换它们的位置，从而实现排序 的目的。\n2. 插入排序：插入排序是一种简单直观的排序方法，它通过构建有序序列来对给定的数据进行排序的目的。\n3. 快速排序：快速排序是一种高效的排序算法，它通过分治策略将待排序的数据分割成若干个子序列，并对这些子序列分别进行排序，从而实现排序的目的。\n4. 归并排序：归并排序是一种稳定的排序算法，它通过分治策略将待排序的数据分割成若干个子序列，并对这些子序列分别进行排序，然后 将所有子序列合并成一个有序序列，从而实现排序的目的。']], 'chat_end_flag': 0}
+因为chat_end_flag的改变，tts_proess_json更新为： {'chatbot': [['你好', '你好！很高兴能为你提 供帮助。如果你有任何问题或需要任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询 问！祝你一切顺利！'], ['你帮我列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1. 冒泡排序：这是一种简单直观的排序方法，它通过比较相邻的元素并按照顺序交换它们的位置，从而实 现排序的目的。\n2. 插入排序：插入排序是一种简单直观的排序方法，它通过构建有序序列来对给定的数据进行排序的目的。\n3. 快速排序：快速排序是一种高效的排序算法，它通过分治策略将待排序的数据分割成若干个子序列，并对这些子序列分别进行排序，从而实现排序的目的。\n4. 归并排序：归并排序是一种稳定的排序算法，它通过分治策略将待排序的数据分割成若干个子序列，并对这些子序列分别进行排序 ，然后将所有子序列合并成一个有序序列，从而实现排序的目的。']], 'chat_end_flag': 1}
+temp_tts_flag:chat_end_flag 0
+TTS.py：tts.tts_text文字“ 冒泡排序：这是一种简单直观的排序方法，它通过比较相邻的元素并按照顺 序交换它们的位置，从而实现排序的目的。”读取完成后的text_list: ['\n', '2.', ' 插入排序：插入排序是一种简单直观的排序方法，', '它通过构建有序序列来对给定的数据进行排序的目的。']
+目前已经读入的文字长度：74
+TTS.py：tts.tts_text截止到下一步要读取的总长度100
+TTS.py：tts.run正在读取：
+2. 插入排序：插入排序是一种简单直观的排序方法，
+TTS.py：tts.tts_text文字“
+2. 插入排序：插入排序是一种简单直观的排序方法，”读取完成后的text_list: ['它通过构建有序序列来对给定的数据进行排序的目的。']
+目前已经读入的文字长度：100
+temp_tts_flag:chatbot, 1
+temp_tts_flag:temp_tts 1
+TTS.py：传入tts_text的history: [['你好', '你好！很高兴能为你提供帮助。如果你有任何问题或需要 任何信息，请随时告诉我。我会尽力提供支持和解答疑问。谢谢你的询问！祝你一切顺利！'], ['你帮我 列举一下几种排序算法', '当然可以，以下是一些常见的排序算法：\n1. 冒泡排序：这是一种简单直观的排序方法，它通过比较相邻的元素并按照顺序交换它们的位置，从而实现排序的目的。\n2. 插入排序：插入排序是一种简单直观的排序方法，它通过构建有序序列来对给定的数据进行排序的目的。\n3. 快速排序：快速排序是一种高效的排序算法，它通过分治策略将待排序的数据分割成若干个子序列，并对这些子序 列分别进行排序，从而实现排序的目的。\n4. 归并排序：归并排序是一种稳定的排序算法，它通过分治策略将待排序的数据分割成若干个子序列，并对这些子序列分别进行排序，然后将所有子序列合并成一个有 序序列，从而实现排序的目的。']] num: 1 have_read_length 100
+TTS.py：tts.tts_text目前待读入的文字：， 它通过构建有序序列来对给定的数据进行排序的目的。
+3. 快速排序：快速排序是一种高效的排序算法，它通过分治策略将待排序的数据分割成若干个子序列，并对这些子序列分别进行排序，从而实现排序的目的。
+4. 归并排序：归并排序是一种稳定的排序算法，它通过分治策略将待排序的数据分割成若干个子序列，并对这些子序列分别进行排序，然后将所有子序列合并成一个有序序列，从而实现排序的目的。
+
+TTS.py：tts.tts_text切分后的列表：， ['它通过构建有序序列来对给定的数据进行排序的目的。', '\n', '3.', ' 快速排序：快速排序是一种高效的排序算法，', '它通过分治策略将待排序的数据分割成若干个子序列，', '并对这些子序列分别进行排序，', '从而实现排序的目的。', '\n', '4.', ' 归并排序：归并排序是一种稳定的排序算法，', '它通过分治策略将待排序的数据分割成若干个子序列，', '并对这 些子序列分别进行排序，', '然后将所有子序列合并成一个有序序列，', '从而实现排序的目的。'] num: 1 have_read_length: 100 history的长度 286
+
+TTS.py：tts.tts_text待读入文本末尾是标点符号且文本长度大于endure_sentence<或者num=1且文本长度非0，进入语音转写的循环
+TTS.py：tts.tts_text截止到下一步要读取的总长度286
+TTS.py：tts.run正在读取： 它通过构建有序序列来对给定的数据进行排序的目的。
+3. 快速排序：快速排序是一种高效的排序算法，它通过分治策略将待排序的数据分割成若干个子序列，并对这些子序列分别进行排序，从而实现排序的目的。
+4. 归并排序：归并排序是一种稳定的排序算法，它通过分治策略将待排序的数据分割成若干个子序列，并对这些子序列分别进行排序，然后将所有子序列合并成一个有序序列，从而实现排序的目的。
+TTS.py：tts.tts_text文字“它通过构建有序序列来对给定的数据进行排序的目的。
+3. 快速排序：快速排序是一种高效的排序算法，它通过分治策略将待排序的数据分割成若干个子序列，并对这些子序列分别进行排序，从而实现排序的目的。
+4. 归并排序：归并排序是一种稳定的排序算法，它通过分治策略将待排序的数据分割成若干个子序列，并对这些子序列分别进行排序，然后将所有子序列合并成一个有序序列，从而实现排序的目的。”读取完成后的text_list: []
+目前已经读入的文字长度：286

@@ -1,0 +1,5 @@
+num_predict,temperature,top_p,top_k,num_ctx,repeat_penalty,seed,num_gpu,stop,output,flag,username,timestamp
+7,0.4,0.6,40,8,1.1,0,6,AI assistant:,params has been saved,,,2024-04-14 10:57:19.839834
+0,0,,,,2024-04-14 19:55:31.368474
+0,0,params has been saved,,,2024-04-15 02:07:43.740443
+,,,2024-04-24 23:05:19.283293

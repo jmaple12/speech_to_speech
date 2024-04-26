@@ -1,0 +1,4 @@
+清除所有cmd进程：taskkill /f /t /fi "imagename eq cmd.exe"
+清除指定PID的cmd进程：taskkill /PID <您的PID> /F
+查看cmd所有进程：tasklist /fi "imagename eq cmd.exe"
+查看指定端口的进程：netstat -ano | findstr :<port>

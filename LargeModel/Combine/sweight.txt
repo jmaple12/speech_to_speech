@@ -1,0 +1,1 @@
+E:\LargeModel\Speech_Synthesis\GPT_Sovits\GPT-SoVITS-beta\GPT-SoVITS-beta0306fix\GPT_SoVITS\pretrained_models\s2G488k.pth
