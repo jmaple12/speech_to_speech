@@ -1,4 +1,4 @@
-[English Introduction Please Click Here](https://github.com/jmaple12/speech_to_speech/blob/main/README.md)
+[English Introduction Please Click Here]((https://github.com/jmaple12/speech_to_speech/blob/main/README_ENGLISH.md))
 
 ## 更新20240427
 
