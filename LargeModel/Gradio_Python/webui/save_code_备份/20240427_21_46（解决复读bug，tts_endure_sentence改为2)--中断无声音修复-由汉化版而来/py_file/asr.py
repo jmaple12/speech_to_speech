@@ -6,7 +6,7 @@ cache_path = os.path.abspath(cache_path).replace('\\','/')+'/'
 path = "E:\LargeModel\kaldi\sherpa_onnx_model\sherpa_onnx_speech_recognizier.bat"
 
 def asr_init(path=path):
-    path = path.replace('\\','/').strip('\'').strip('"')
+    path = path.replace('\\','/')
     text = open(path, 'r').read()
     text = 'chcp 65001\n'+"cd /d "+'/'.join(path.split('/')[:-1])+'\n'+text
     text = text.replace('\npause','')
@@ -16,8 +16,7 @@ def asr_init(path=path):
 
 def asr_request():
     url = 'http://127.0.0.1:9337/flag'
-    #使用post容易断，我还是使用get吧。
-    res = requests.get(url,)
+    res = requests.post(url,json={})
     res = eval(res.content.decode(encoding='utf-8'))[1]
     print("语音转写的结果为：%s"%res)
     return(res)
@@ -58,7 +57,7 @@ def check_asr_duply():
             
 
 
-def get_asr_process(input_num, asr_text_process, temp_process_asr):
+def get_asr_process(input_num):
     '''待办：让asr_text_process变更时也运行此程序
     从input_num开始搜索文本，保存第一个用户：..\n的字段，input_num改为搜索的句尾位置。
     '''
@@ -70,12 +69,7 @@ def get_asr_process(input_num, asr_text_process, temp_process_asr):
         ss = re.search("INFO:.*\n", temp)
         if ss:
             open(cache_path+'asr_err.txt','w+',encoding='gb18030').write(temp[ss.span()[1]:])
-            #当遇到INFO时，记录下之前的最后一句话
-            before_words = re.findall('用户：.*\n', temp[:ss.span()[1]])
-            if before_words:
-                temp_process_asr += before_words[-1][3:].strip('\n ')
-
-            return(asr_text_process, 0, temp_process_asr)
+            return(None, 0)
         
         temp = temp.lstrip('\n ')
         temp2 = re.search('用户：.*\n', temp[num:])
@@ -83,9 +77,9 @@ def get_asr_process(input_num, asr_text_process, temp_process_asr):
             temp_phrase = temp2.group()[3:].strip('\n ')
             num = temp2.span()[1]+num
             print("get_asr_process:", temp_phrase,'||')
-            return(temp_process_asr+temp_phrase, num, temp_process_asr)
+            return(temp_phrase, num)
         else:
-            return(temp_process_asr, num, temp_process_asr)
+            return(None, num)
 
 
 def read_ast_out():

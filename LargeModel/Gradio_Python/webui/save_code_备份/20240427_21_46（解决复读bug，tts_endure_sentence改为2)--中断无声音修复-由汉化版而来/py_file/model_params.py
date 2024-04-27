@@ -27,14 +27,14 @@ def save_cut_params(max_epoch, cut_nepoch):
         'max_epoch':max_epoch,
         'cut_nepoch':cut_nepoch
     }
-    chat_params =dict()
+    chat_params = dict()
     if os.path.exists(cache_path+"chat_params.json"):
         with open(cache_path+'chat_params.json','r') as file:
-            temp_val = file.read()
-            if temp_val:
-                chat_params = json.loads(temp_val)
+            temp = file.read()
+            if temp:
+                chat_params = json.loads(temp)
     if "cut_params" not in chat_params:
-        chat_params['cut_params'] = dict()
+        chat_params['cut_params'] = {}
     chat_params['cut_params'].update(cut_params)
     with open(cache_path+'chat_params.json','w+') as file:
         file.write(json.dumps(chat_params))
@@ -116,9 +116,9 @@ def save_params(
     chat_params = dict()
     if os.path.exists(cache_path+"chat_params.json"):
         with open(cache_path+"chat_params.json", 'r') as file:
-            temp_val = file.read()
-            if temp_val:
-                chat_params = json.loads(temp_val)
+            temp = file.read()
+            if temp:
+                chat_params = json.loads(temp)
     chat_params['params'] = {"ollama":params}
     with open(cache_path+'chat_params.json','w+') as file:
         file.write(json.dumps(chat_params))

@@ -36,19 +36,19 @@ def model_select_update(model_loader, model):
     return(model)
 
 def save_model(model):
-    chat_params={}
+    chat_params=dict()
     if os.path.exists(cache_path+'chat_params.json'):
         with open(cache_path+'chat_params.json','r') as file:
-            temp_val = file.read()
-            if temp_val:
-                chat_params = json.loads(temp_val)
+            temp = file.read()
+            if temp:
+                chat_params = json.loads(temp)
     chat_params['model'] = model+'\n'
     with open(cache_path+'chat_params.json','w+') as file:
         file.write(json.dumps(chat_params))
     return
 
 def save_model_loader(model_loader):
-    chat_params={}
+    chat_params=dict()
     if os.path.exists(cache_path+'chat_params.json'):
         with open(cache_path+'chat_params.json','r') as file:
             temp_val = file.read()
@@ -61,12 +61,12 @@ def save_model_loader(model_loader):
     return
 
 def save_promot_text(promot):
-    chat_params={}
+    chat_params=dict()
     if os.path.exists(cache_path+'chat_params.json'):
         with open(cache_path+'chat_params.json','r') as file:
-            temp_val = file.read()
-            if temp_val:
-                chat_params = json.loads(temp_val)
+            temp = file.read()
+            if temp:
+                chat_params = json.loads(temp)
     chat_params['promot_text'] = promot+'\n'
     with open(cache_path+'chat_params.json','w+') as file:
         file.write(json.dumps(chat_params))
