@@ -11,6 +11,7 @@ from fastapi import FastAPI, Request, HTTPException, Response
 from fastapi.responses import StreamingResponse, JSONResponse
 from fastapi import FastAPI, UploadFile, File
 import uvicorn
+from pydantic import BaseModel
 
 import argparse
 import sys
@@ -240,6 +241,20 @@ check_recognizer =main()
 APP = FastAPI()
 @APP.get("/flag")
 def tts_get_endpoint(flag: int=0):
+    global check_recognizer
+    if flag:
+        check_recognizer = main(flag)
+        res=''
+    else:
+        res = main(flag, check_recognizer)
+    return res
+
+class post_data(BaseModel):
+    flag:int =0
+
+@APP.post("/flag")
+def tts_post_endpoint(data:post_data):
+    flag = data.flag
     global check_recognizer
     if flag:
         check_recognizer = main(flag)
